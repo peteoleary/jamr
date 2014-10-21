@@ -1,0 +1,5 @@
+#!/bin/bash
+
+for split in ${JAMR_STAGES}; do
+    cat "${DATA_DIR}/${DATA_FILE_BASE}.${split}.aligned" | sed 's/:op[^ ]*/:op/g' > "${DATA_DIR}/${DATA_FILE_BASE}.${split}.aligned.no_opN"
+done

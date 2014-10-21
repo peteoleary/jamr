@@ -1,0 +1,5 @@
+#!/bin/bash
+
+for split in ${JAMR_STAGES}; do
+    ${JAMR_HOME}/run CorpusTool < "${DATA_DIR}/${DATA_FILE_BASE}.${split}" --tokenized "${DATA_DIR}/${DATA_FILE_BASE}.${split}.snt.tok" > "${DATA_DIR}/${DATA_FILE_BASE}.${split}.tok"
+done

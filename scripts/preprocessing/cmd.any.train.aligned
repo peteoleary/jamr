@@ -1,0 +1,10 @@
+#!/bin/bash
+
+for split in ${JAMR_STAGES}; do
+    ${JAMR_HOME}/run Aligner -v 1 < "${DATA_DIR}/${DATA_FILE_BASE}.${split}.tok" &> "${DATA_DIR}/${DATA_FILE_BASE}.${split}.aligned.log"
+
+    tail "${DATA_DIR}/${DATA_FILE_BASE}.${split}.aligned.log"
+
+    # Remove the warnings and spans
+    cat "${DATA_DIR}/${DATA_FILE_BASE}.${split}.aligned.log" | egrep '^#|^ |^\(|^$' > "${DATA_DIR}/${DATA_FILE_BASE}.${split}.aligned"
+done

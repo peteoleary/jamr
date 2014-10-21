@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-INPUT="${DATA_DIR}/amr-release-proxy.train"
+INPUT="${DATA_DIR}/${DATA_FILE_BASE}.train"
 OUTPUT="${MODEL_DIR}/stage1-weights"
 
 "${JAMR_HOME}/run" AMRParser \

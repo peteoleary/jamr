@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# split data into train/dev/test folds
+
+cp ${DATA_DIR}/${DATA_FILE_BASE}.txt "${DATA_DIR}/${DATA_FILE_BASE}.train"

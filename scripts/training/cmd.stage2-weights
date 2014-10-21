@@ -1,12 +1,11 @@
 #!/bin/bash
 
-INPUT="${DATA_DIR}/amr-release-proxy.train"
-DEV="${DATA_DIR}/amr-release-proxy.dev"
+INPUT="${DATA_DIR}/${DATA_FILE_BASE}.train"
+DEV="${DATA_DIR}/${DATA_FILE_BASE}.dev"
 OUTPUT="${MODEL_DIR}/stage2-weights"
 
 ${JAMR_HOME}/run AMRParser \
 --stage2-train \
---training-save-interval 1 \
 --training-passes 10 \
 --stage2-decoder LR \
 --stage2-labelset "${JAMR_HOME}/resources/labelset" \

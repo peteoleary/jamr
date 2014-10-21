@@ -1,0 +1,5 @@
+#!/bin/bash
+
+for split in ${JAMR_STAGES}; do
+    "${JAMR_HOME}/run" RunStanfordParser < "${DATA_DIR}/${DATA_FILE_BASE}.${split}.snt" > "${DATA_DIR}/${DATA_FILE_BASE}.${split}.snt.deps"
+done

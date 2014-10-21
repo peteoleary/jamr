@@ -1,0 +1,5 @@
+#!/bin/bash
+
+for split in ${JAMR_STAGES}; do
+    cat "${DATA_DIR}/${DATA_FILE_BASE}.${split}" | grep '::snt ' | sed 's/^# ::snt //' | "${CDEC}/corpus/tokenize-anything.sh" > "${DATA_DIR}/${DATA_FILE_BASE}.${split}.snt.tok"
+done
