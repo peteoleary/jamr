@@ -9,10 +9,16 @@ import scala.collection.mutable.ArrayBuffer
 /****************************** Align Words *****************************/
 object AlignSpans2 {
 
+    def dumpSpans(marker: String, spans: ArrayBuffer[Span]): String = {
+      var sb = new StringBuilder()
+      for (s <- spans) sb.append(f"$marker: $s\n")
+      sb.toString()
+    }
+
     def align(sentence: Array[String], graph: Graph) {
         val stemmedSentence = sentence.map(stemmer(_))
         val wordToSpan : Array[Option[Int]] = sentence.map(x => None)
-        logger(3, "Stemmed sentence "+stemmedSentence.toList.toString)
+        logger(1, "Stemmed sentence "+stemmedSentence.toList.toString)
 
         val namedEntity = new SpanAligner(sentence, graph) {
             concept = "name"
@@ -25,7 +31,9 @@ object AlignSpans2 {
                 }
             }
             //words = nodes => { nodes.tail.map(x => Pattern.quote(getConcept(x._2.concept).toLowerCase.replaceAll("[^a-zA-Z0-9\t]",""))).mkString("[^a-zA-Z]*").r }
-            words = nodes => { ("\t"+nodes.tail.map(x => getConcept(x._2.concept).toLowerCase/*.replaceAll("[^a-zA-Z0-9\t]","")*/.split("").tail.map(Pattern.quote(_)).mkString("\t?")).mkString("[^a-zA-Z]*")+"\t").r }
+            words = nodes => {
+              ("\t"+nodes.tail.map(x => getConcept(x._2.concept).toLowerCase/*.replaceAll("[^a-zA-Z0-9\t]","")*/.split("").tail.map(Pattern.quote(_)).mkString("\t?")).mkString("[^a-zA-Z]*")+"\t").r
+            }
         }
 
         val fuzzyNamedEntity = new SpanAligner(sentence, graph) {
@@ -173,14 +181,18 @@ object AlignSpans2 {
         addAllSpans(singleConcept, graph, wordToSpan, addCoRefs=false)
         addAllSpans(fuzzyConcept, graph, wordToSpan, addCoRefs=false)
         addAllSpans(US, graph, wordToSpan, addCoRefs=false)
-        try { updateSpans(namedEntityCollect, graph) } catch { case e : Throwable => Unit }
-        try { updateSpans(unalignedEntity, graph) } catch { case e : Throwable => Unit }
-        try { updateSpans(quantity, graph) } catch { case e : Throwable => Unit }
-        try { updateSpans(argOf, graph) } catch { case e : Throwable => Unit }
-        try { updateSpans(personOf, graph) } catch { case e : Throwable => Unit }
-        try { updateSpans(governmentOrg, graph) } catch { case e : Throwable => Unit }
-        try { updateSpans(polarityChild, graph) } catch { case e : Throwable => Unit }
-        try { updateSpans(est, graph) } catch { case e : Throwable => Unit }
+        val spansBefore = dumpSpans("before", graph.spans)
+        updateSpans(namedEntityCollect, graph)
+        updateSpans(unalignedEntity, graph)
+        updateSpans(quantity, graph)
+        updateSpans(argOf, graph)
+        updateSpans(personOf, graph)
+        updateSpans(governmentOrg, graph)
+        updateSpans(polarityChild, graph)
+        updateSpans(est, graph)
+        val spansAfter = dumpSpans("after", graph.spans)
+        logger(1, spansBefore)
+        logger(1, spansAfter)
         //try { updateSpans(er, graph) } catch { case e : Throwable => Unit }
         //dateEntities(sentence, graph)
         //namedEntities(sentence, graph)
@@ -210,14 +222,14 @@ object AlignSpans2 {
 
         var spans: (List[(String,Node)]) => List[(Int, Int)] = allNodes => {
             val regex = words(allNodes)
-            logger(2, "regex: " + regex)
+            logger(3, "regex: " + regex)
             val matchList = regex.findAllMatchIn(tabSentence).toList
             logger(2, "matchList: " + matchList)
             matchList.map(x => matchToIndices(x, tabSentence))
         }
 
         def getSpans(node: Node) : List[Span] = {
-            logger(2, "Processing node: " + node.concept)
+            logger(3, "SpanAligner.getSpans Processing node: " + node.concept)
             return node match {
                 case Node(_,_,c,_,_,_,_,_) if ((concept.r.unapplySeq(getConcept(c)) != None) && !node.isAligned(graph)) => {
                     logger(2, "Matched concept regex: " + concept)
@@ -250,7 +262,7 @@ object AlignSpans2 {
         }
 
         def update(node: Node) {
-            logger(2, "SpanUpdater processing node: " + node.concept)
+            logger(3, "SpanUpdater.update processing node: " + node.concept)
             node match {
                 case Node(_,_,c,_,_,_,_,_) if ((concept.r.unapplySeq(getConcept(c)) != None) && (!node.isAligned(graph) || !unalignedOnly)) => {
                     logger(2, "SpanUpdater matched concept regex: " + concept)
@@ -446,6 +458,8 @@ object AlignSpans2 {
                 }
             }
         }
+        // invoke the add() method on each node of the graph beginning with the root
+        logger(2, f"addAllSpans: concept=${f.concept}")
         graph.doRecursive(add)
     }
 

@@ -81,6 +81,8 @@ scala -classpath . edu.cmu.lti.nlp.amr.AMRParser --stage2-decode -w weights -l l
        result
     }
 
+    var previousStage2: Option[GraphDecoder.Decoder] = None
+
     def main(args: Array[String]) {
 
         if (args.length == 0) { println(usage); sys.exit(1) }
@@ -100,13 +102,15 @@ scala -classpath . edu.cmu.lti.nlp.amr.AMRParser --stage2-decode -w weights -l l
             }
         }
 
-        val stage2 : Option[GraphDecoder.Decoder] = {
+        val stage2 : Option[GraphDecoder.Decoder] = if (previousStage2.isDefined) previousStage2 else {
             if((options.contains('stage1Only) || options.contains('stage1Train)) && !options.contains('stage2Train)) {
                 None
             } else {
                 Some(GraphDecoder.Decoder(options))
             }
         }
+
+        previousStage2 = stage2
 
         val stage2Oracle : Option[GraphDecoder.Decoder] = {
             if(options.contains('trainingData) || options.contains('stage2Train)) {
@@ -158,10 +162,12 @@ scala -classpath . edu.cmu.lti.nlp.amr.AMRParser --stage2-decode -w weights -l l
 
             logger(0, "Reading weights")
             if (stage2 != None) {
-                val stage2weightlines = Source.fromFile(stage2weightfile).getLines()
-                stage2.get.features.weights.read(stage2weightlines)
-                if (stage2Oracle != None) {
-                    stage2Oracle.get.features.weights.read(Source.fromFile(stage2weightfile).getLines())
+                if (stage2.get.features.weights.fmap.size == 0) {
+                  val stage2weightlines = Source.fromFile( stage2weightfile ).getLines( )
+                  stage2.get.features.weights.read( stage2weightlines )
+                  if( stage2Oracle != None ) {
+                    stage2Oracle.get.features.weights.read( Source.fromFile( stage2weightfile ).getLines( ) )
+                  }
                 }
             }
             logger(0, "done")

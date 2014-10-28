@@ -53,10 +53,11 @@ class Concepts(phraseConceptPairs: Array[PhraseConceptPair],
 
     def namedEntity(input: Input, entity: Entity) : PhraseConceptPair = {
         val Input(_, sentence, notTokenized, _, _, ner) = input
-        val entityType : String = entity.label match {
+        val entityType : String = entity.label.substring(0, 3) match {
             case "PER" => "person"          // also president
             case "ORG" => "organization"    // also company, government-organization, criminal-organization
             case "LOC" => "country"         // also city, world-region, continent, county
+            case "DAT" => "date"         // also city, world-region, continent, county
             case "MISC" => "thing"         // also treaty, publication, newspaper, product, war
         }
         val (start, end) = ner.getSpan((entity.start, entity.end))    // start and end in ner.snt, which should be the unTokenized text
