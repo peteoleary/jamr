@@ -2,6 +2,8 @@ package edu.cmu.lti.nlp.amr
 
 import java.io.PrintStream
 
+import edu.cmu.lti.nlp.amr.BasicFeatureVector.DecoderResult
+
 import scala.io.Source.fromFile
 import scala.collection.mutable.Map
 import scala.collection.mutable.Set
@@ -82,6 +84,7 @@ scala -classpath . edu.cmu.lti.nlp.amr.AMRParser --stage2-decode -w weights -l l
     }
 
     var previousStage2: Option[GraphDecoder.Decoder] = None
+    var resultHandler: Option[Graph => Unit] = None
 
     def main(args: Array[String]) {
 
@@ -292,6 +295,9 @@ scala -classpath . edu.cmu.lti.nlp.amr.AMRParser --stage2-decode -w weights -l l
                 decoderResultGraph.assignOpN()
                 decoderResultGraph.sortRelations()
                 decoderResultGraph.makeIds()
+
+              if (resultHandler.isDefined) resultHandler.get.apply(decoderResultGraph)
+
               outStream.println("# ::alignments "+decoderResultGraph.spans.map(_.format).mkString(" ")+" ::annotator "+VERSION+" ::date "+sdf.format(new Date))
                 if (outputFormat.contains("nodes")) {
                   outStream.println(decoderResultGraph.printNodes.map(x => "# ::node\t" + x).mkString("\n"))
