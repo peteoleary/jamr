@@ -1,0 +1,852 @@
+Stage1 features = List(bias, length, fromNERTagger, conceptGivenPhrase)
+Stage1 features = List(bias, length, fromNERTagger, conceptGivenPhrase)
+Stage1 features = List(bias, length, fromNERTagger, conceptGivenPhrase)
+Pass 1
+NER Entity: (organization :name (name :op "Giants"))
+NER Entity: (organization :name (name :op "Giants"))
+Oracle Span 1:  Giants => (team :name (name :op "Giants"))
+Oracle Span 2:  next => next
+Oracle Span 3:  playing => play-01
+NER Entity: (organization :name (name :op "Giants"))
+NER Entity: (person :name (name :op "Ask"))
+NER Entity: (person :name (name :op "Ask"))
+Oracle Span 1:  Ask => ask-02
+Oracle Span 2:  Liam => (person :name (name :op "Liam"))
+Oracle Span 3:  Michele => (person :name (name :op "Michele"))
+Oracle Span 4:  pick => pick-04
+Oracle Span 5:  today => today
+NER Entity: (person :name (name :op "Ask"))
+Oracle Span 1:  alarm => alarm
+Oracle Span 2:  away => away
+Oracle Span 3:  Set => set-08
+NER Entity: (person :name (name :op "Paul"))
+NER Entity: (country :name (name :op "Savor"))
+NER Entity: (country :name (name :op "Savor"))
+NER Entity: (person :name (name :op "Paul"))
+Oracle Span 1:  7pm => "7pm"
+Oracle Span 2:  me => (person :name (name :op "Me"))
+Oracle Span 3:  meet => meet-03
+Oracle Span 4:  Monday => "Monday"
+Oracle Span 5:  Paul => (person :name (name :op "Paul"))
+Oracle Span 6:  Savor => "Savor"
+Oracle Span 7:  Tell => tell-01
+NER Entity: (person :name (name :op "Paul"))
+NER Entity: (country :name (name :op "Savor"))
+Oracle Span 1:  5am => "5am"
+Oracle Span 2:  alarm => alarm
+Oracle Span 3:  Set => set-08
+Oracle Span 4:  tomorrow => tomorrow
+NER Entity: (person :name (name :op "Liam"))
+NER Entity: (person :name (name :op "Liam"))
+Oracle Span 1:  Liam => (person :name (name :op "Liam"))
+Oracle Span 2:  lights => lights
+Oracle Span 3:  Turn => turn-07
+NER Entity: (person :name (name :op "Liam"))
+NER Entity: (person :name (name :op "Liam"))
+NER Entity: (person :name (name :op "Liam"))
+Oracle Span 1:  buy => buy-01
+Oracle Span 2:  Liam => (person :name (name :op "Liam"))
+Oracle Span 3:  me => (person :name (name :op "Me"))
+Oracle Span 4:  milk => milk
+Oracle Span 5:  Remind => remind-01
+NER Entity: (person :name (name :op "Liam"))
+NER Entity: (person :name (name :op "Michele"))
+NER Entity: (person :name (name :op "Liam"))
+Oracle Span 1:  Ask => ask-02
+Oracle Span 2:  get => get-05
+Oracle Span 3:  Liam => (person :name (name :op "Liam"))
+Oracle Span 4:  Michele => (person :name (name :op "Michele"))
+NER Entity: (person :name (name :op "Liam"))
+NER Entity: (person :name (name :op "Michele"))
+Oracle Span 1:  68 => 68
+Oracle Span 2:  Set => set-02
+Oracle Span 3:  thermometer => thermometer
+Oracle Span 1:  68 => 68
+Oracle Span 2:  Set => set-02
+Oracle Span 3:  temperature => temperature
+Oracle Span 1:  bedroom => bedroom
+Oracle Span 2:  Turn => turn-13
+Oracle Span 3:  TV => (thing :name (name :op "TV"))
+Oracle Span 1:  bathroom => bathroom
+Oracle Span 2:  lights => lights
+Oracle Span 3:  Turn => turn-13
+Oracle Span 1:  49ers => (team :name (name :op "49ers"))
+Oracle Span 2:  game => (event :name (name :op "game"))
+Oracle Span 3:  Record => record-01
+Oracle Span 1:  5am => "5am"
+Oracle Span 2:  me => (person :name (name :op "Me"))
+Oracle Span 3:  tomorrow => tomorrow
+Oracle Span 4:  Wake => wake-01
+Oracle Span 1:  Turn => turn-13
+Oracle Span 2:  TV => "TV"
+Oracle Span 1:  bathroom => bathroom
+Oracle Span 2:  bedroom => bedroom
+Oracle Span 3:  lights => lights
+Oracle Span 4:  Turn => turn-07
+                                   Avg objective value last pass: 0.0
+Pass 2
+Oracle Span 1:  5am => "5am"
+Oracle Span 2:  me => (person :name (name :op "Me"))
+Oracle Span 3:  tomorrow => tomorrow
+Oracle Span 4:  Wake => wake-01
+Oracle Span 1:  alarm => alarm
+Oracle Span 2:  away => away
+Oracle Span 3:  Set => set-08
+Oracle Span 1:  49ers => (team :name (name :op "49ers"))
+Oracle Span 2:  game => (event :name (name :op "game"))
+Oracle Span 3:  Record => record-01
+NER Entity: (person :name (name :op "Paul"))
+NER Entity: (country :name (name :op "Savor"))
+NER Entity: (country :name (name :op "Savor"))
+NER Entity: (person :name (name :op "Paul"))
+Oracle Span 1:  7pm => "7pm"
+Oracle Span 2:  me => (person :name (name :op "Me"))
+Oracle Span 3:  meet => meet-03
+Oracle Span 4:  Monday => "Monday"
+Oracle Span 5:  Paul => (person :name (name :op "Paul"))
+Oracle Span 6:  Savor => "Savor"
+Oracle Span 7:  Tell => tell-01
+NER Entity: (person :name (name :op "Paul"))
+NER Entity: (country :name (name :op "Savor"))
+NER Entity: (person :name (name :op "Michele"))
+NER Entity: (person :name (name :op "Liam"))
+NER Entity: (person :name (name :op "Liam"))
+NER Entity: (person :name (name :op "Michele"))
+Oracle Span 1:  Ask => ask-02
+Oracle Span 2:  get => get-05
+Oracle Span 3:  Liam => (person :name (name :op "Liam"))
+Oracle Span 4:  Michele => (person :name (name :op "Michele"))
+NER Entity: (person :name (name :op "Liam"))
+NER Entity: (person :name (name :op "Michele"))
+NER Entity: (organization :name (name :op "Giants"))
+NER Entity: (organization :name (name :op "Giants"))
+Oracle Span 1:  Giants => (team :name (name :op "Giants"))
+Oracle Span 2:  next => next
+Oracle Span 3:  playing => play-01
+NER Entity: (organization :name (name :op "Giants"))
+Oracle Span 1:  68 => 68
+Oracle Span 2:  Set => set-02
+Oracle Span 3:  temperature => temperature
+Oracle Span 1:  bathroom => bathroom
+Oracle Span 2:  lights => lights
+Oracle Span 3:  Turn => turn-13
+Oracle Span 1:  bathroom => bathroom
+Oracle Span 2:  bedroom => bedroom
+Oracle Span 3:  lights => lights
+Oracle Span 4:  Turn => turn-07
+NER Entity: (person :name (name :op "Ask"))
+NER Entity: (person :name (name :op "Ask"))
+Oracle Span 1:  Ask => ask-02
+Oracle Span 2:  Liam => (person :name (name :op "Liam"))
+Oracle Span 3:  Michele => (person :name (name :op "Michele"))
+Oracle Span 4:  pick => pick-04
+Oracle Span 5:  today => today
+NER Entity: (person :name (name :op "Ask"))
+NER Entity: (person :name (name :op "Liam"))
+NER Entity: (person :name (name :op "Liam"))
+Oracle Span 1:  Liam => (person :name (name :op "Liam"))
+Oracle Span 2:  lights => lights
+Oracle Span 3:  Turn => turn-07
+NER Entity: (person :name (name :op "Liam"))
+Oracle Span 1:  Turn => turn-13
+Oracle Span 2:  TV => "TV"
+Oracle Span 1:  5am => "5am"
+Oracle Span 2:  alarm => alarm
+Oracle Span 3:  Set => set-08
+Oracle Span 4:  tomorrow => tomorrow
+Oracle Span 1:  bedroom => bedroom
+Oracle Span 2:  Turn => turn-13
+Oracle Span 3:  TV => (thing :name (name :op "TV"))
+NER Entity: (person :name (name :op "Liam"))
+NER Entity: (person :name (name :op "Liam"))
+Oracle Span 1:  buy => buy-01
+Oracle Span 2:  Liam => (person :name (name :op "Liam"))
+Oracle Span 3:  me => (person :name (name :op "Me"))
+Oracle Span 4:  milk => milk
+Oracle Span 5:  Remind => remind-01
+NER Entity: (person :name (name :op "Liam"))
+Oracle Span 1:  68 => 68
+Oracle Span 2:  Set => set-02
+Oracle Span 3:  thermometer => thermometer
+                                   Avg objective value last pass: 0.0
+Pass 3
+Oracle Span 1:  bathroom => bathroom
+Oracle Span 2:  lights => lights
+Oracle Span 3:  Turn => turn-13
+NER Entity: (person :name (name :op "Paul"))
+NER Entity: (country :name (name :op "Savor"))
+NER Entity: (country :name (name :op "Savor"))
+NER Entity: (person :name (name :op "Paul"))
+Oracle Span 1:  7pm => "7pm"
+Oracle Span 2:  me => (person :name (name :op "Me"))
+Oracle Span 3:  meet => meet-03
+Oracle Span 4:  Monday => "Monday"
+Oracle Span 5:  Paul => (person :name (name :op "Paul"))
+Oracle Span 6:  Savor => "Savor"
+Oracle Span 7:  Tell => tell-01
+NER Entity: (person :name (name :op "Paul"))
+NER Entity: (country :name (name :op "Savor"))
+NER Entity: (person :name (name :op "Liam"))
+NER Entity: (person :name (name :op "Liam"))
+Oracle Span 1:  buy => buy-01
+Oracle Span 2:  Liam => (person :name (name :op "Liam"))
+Oracle Span 3:  me => (person :name (name :op "Me"))
+Oracle Span 4:  milk => milk
+Oracle Span 5:  Remind => remind-01
+NER Entity: (person :name (name :op "Liam"))
+Oracle Span 1:  bathroom => bathroom
+Oracle Span 2:  bedroom => bedroom
+Oracle Span 3:  lights => lights
+Oracle Span 4:  Turn => turn-07
+Oracle Span 1:  alarm => alarm
+Oracle Span 2:  away => away
+Oracle Span 3:  Set => set-08
+NER Entity: (organization :name (name :op "Giants"))
+NER Entity: (organization :name (name :op "Giants"))
+Oracle Span 1:  Giants => (team :name (name :op "Giants"))
+Oracle Span 2:  next => next
+Oracle Span 3:  playing => play-01
+NER Entity: (organization :name (name :op "Giants"))
+Oracle Span 1:  68 => 68
+Oracle Span 2:  Set => set-02
+Oracle Span 3:  thermometer => thermometer
+NER Entity: (person :name (name :op "Michele"))
+NER Entity: (person :name (name :op "Liam"))
+NER Entity: (person :name (name :op "Liam"))
+NER Entity: (person :name (name :op "Michele"))
+Oracle Span 1:  Ask => ask-02
+Oracle Span 2:  get => get-05
+Oracle Span 3:  Liam => (person :name (name :op "Liam"))
+Oracle Span 4:  Michele => (person :name (name :op "Michele"))
+NER Entity: (person :name (name :op "Liam"))
+NER Entity: (person :name (name :op "Michele"))
+Oracle Span 1:  68 => 68
+Oracle Span 2:  Set => set-02
+Oracle Span 3:  temperature => temperature
+NER Entity: (person :name (name :op "Ask"))
+NER Entity: (person :name (name :op "Ask"))
+Oracle Span 1:  Ask => ask-02
+Oracle Span 2:  Liam => (person :name (name :op "Liam"))
+Oracle Span 3:  Michele => (person :name (name :op "Michele"))
+Oracle Span 4:  pick => pick-04
+Oracle Span 5:  today => today
+NER Entity: (person :name (name :op "Ask"))
+Oracle Span 1:  Turn => turn-13
+Oracle Span 2:  TV => "TV"
+Oracle Span 1:  bedroom => bedroom
+Oracle Span 2:  Turn => turn-13
+Oracle Span 3:  TV => (thing :name (name :op "TV"))
+Oracle Span 1:  5am => "5am"
+Oracle Span 2:  alarm => alarm
+Oracle Span 3:  Set => set-08
+Oracle Span 4:  tomorrow => tomorrow
+Oracle Span 1:  5am => "5am"
+Oracle Span 2:  me => (person :name (name :op "Me"))
+Oracle Span 3:  tomorrow => tomorrow
+Oracle Span 4:  Wake => wake-01
+Oracle Span 1:  49ers => (team :name (name :op "49ers"))
+Oracle Span 2:  game => (event :name (name :op "game"))
+Oracle Span 3:  Record => record-01
+NER Entity: (person :name (name :op "Liam"))
+NER Entity: (person :name (name :op "Liam"))
+Oracle Span 1:  Liam => (person :name (name :op "Liam"))
+Oracle Span 2:  lights => lights
+Oracle Span 3:  Turn => turn-07
+NER Entity: (person :name (name :op "Liam"))
+                                   Avg objective value last pass: 0.0
+Pass 4
+NER Entity: (person :name (name :op "Ask"))
+NER Entity: (person :name (name :op "Ask"))
+Oracle Span 1:  Ask => ask-02
+Oracle Span 2:  Liam => (person :name (name :op "Liam"))
+Oracle Span 3:  Michele => (person :name (name :op "Michele"))
+Oracle Span 4:  pick => pick-04
+Oracle Span 5:  today => today
+NER Entity: (person :name (name :op "Ask"))
+Oracle Span 1:  Turn => turn-13
+Oracle Span 2:  TV => "TV"
+Oracle Span 1:  5am => "5am"
+Oracle Span 2:  alarm => alarm
+Oracle Span 3:  Set => set-08
+Oracle Span 4:  tomorrow => tomorrow
+Oracle Span 1:  bathroom => bathroom
+Oracle Span 2:  lights => lights
+Oracle Span 3:  Turn => turn-13
+Oracle Span 1:  bedroom => bedroom
+Oracle Span 2:  Turn => turn-13
+Oracle Span 3:  TV => (thing :name (name :op "TV"))
+Oracle Span 1:  49ers => (team :name (name :op "49ers"))
+Oracle Span 2:  game => (event :name (name :op "game"))
+Oracle Span 3:  Record => record-01
+NER Entity: (person :name (name :op "Liam"))
+NER Entity: (person :name (name :op "Liam"))
+Oracle Span 1:  buy => buy-01
+Oracle Span 2:  Liam => (person :name (name :op "Liam"))
+Oracle Span 3:  me => (person :name (name :op "Me"))
+Oracle Span 4:  milk => milk
+Oracle Span 5:  Remind => remind-01
+NER Entity: (person :name (name :op "Liam"))
+NER Entity: (person :name (name :op "Paul"))
+NER Entity: (country :name (name :op "Savor"))
+NER Entity: (country :name (name :op "Savor"))
+NER Entity: (person :name (name :op "Paul"))
+Oracle Span 1:  7pm => "7pm"
+Oracle Span 2:  me => (person :name (name :op "Me"))
+Oracle Span 3:  meet => meet-03
+Oracle Span 4:  Monday => "Monday"
+Oracle Span 5:  Paul => (person :name (name :op "Paul"))
+Oracle Span 6:  Savor => "Savor"
+Oracle Span 7:  Tell => tell-01
+NER Entity: (person :name (name :op "Paul"))
+NER Entity: (country :name (name :op "Savor"))
+NER Entity: (organization :name (name :op "Giants"))
+NER Entity: (organization :name (name :op "Giants"))
+Oracle Span 1:  Giants => (team :name (name :op "Giants"))
+Oracle Span 2:  next => next
+Oracle Span 3:  playing => play-01
+NER Entity: (organization :name (name :op "Giants"))
+Oracle Span 1:  5am => "5am"
+Oracle Span 2:  me => (person :name (name :op "Me"))
+Oracle Span 3:  tomorrow => tomorrow
+Oracle Span 4:  Wake => wake-01
+NER Entity: (person :name (name :op "Michele"))
+NER Entity: (person :name (name :op "Liam"))
+NER Entity: (person :name (name :op "Liam"))
+NER Entity: (person :name (name :op "Michele"))
+Oracle Span 1:  Ask => ask-02
+Oracle Span 2:  get => get-05
+Oracle Span 3:  Liam => (person :name (name :op "Liam"))
+Oracle Span 4:  Michele => (person :name (name :op "Michele"))
+NER Entity: (person :name (name :op "Liam"))
+NER Entity: (person :name (name :op "Michele"))
+Oracle Span 1:  68 => 68
+Oracle Span 2:  Set => set-02
+Oracle Span 3:  temperature => temperature
+Oracle Span 1:  alarm => alarm
+Oracle Span 2:  away => away
+Oracle Span 3:  Set => set-08
+NER Entity: (person :name (name :op "Liam"))
+NER Entity: (person :name (name :op "Liam"))
+Oracle Span 1:  Liam => (person :name (name :op "Liam"))
+Oracle Span 2:  lights => lights
+Oracle Span 3:  Turn => turn-07
+NER Entity: (person :name (name :op "Liam"))
+Oracle Span 1:  bathroom => bathroom
+Oracle Span 2:  bedroom => bedroom
+Oracle Span 3:  lights => lights
+Oracle Span 4:  Turn => turn-07
+Oracle Span 1:  68 => 68
+Oracle Span 2:  Set => set-02
+Oracle Span 3:  thermometer => thermometer
+                                   Avg objective value last pass: 0.0
+Pass 5
+NER Entity: (organization :name (name :op "Giants"))
+NER Entity: (organization :name (name :op "Giants"))
+Oracle Span 1:  Giants => (team :name (name :op "Giants"))
+Oracle Span 2:  next => next
+Oracle Span 3:  playing => play-01
+NER Entity: (organization :name (name :op "Giants"))
+NER Entity: (person :name (name :op "Michele"))
+NER Entity: (person :name (name :op "Liam"))
+NER Entity: (person :name (name :op "Liam"))
+NER Entity: (person :name (name :op "Michele"))
+Oracle Span 1:  Ask => ask-02
+Oracle Span 2:  get => get-05
+Oracle Span 3:  Liam => (person :name (name :op "Liam"))
+Oracle Span 4:  Michele => (person :name (name :op "Michele"))
+NER Entity: (person :name (name :op "Liam"))
+NER Entity: (person :name (name :op "Michele"))
+NER Entity: (person :name (name :op "Paul"))
+NER Entity: (country :name (name :op "Savor"))
+NER Entity: (country :name (name :op "Savor"))
+NER Entity: (person :name (name :op "Paul"))
+Oracle Span 1:  7pm => "7pm"
+Oracle Span 2:  me => (person :name (name :op "Me"))
+Oracle Span 3:  meet => meet-03
+Oracle Span 4:  Monday => "Monday"
+Oracle Span 5:  Paul => (person :name (name :op "Paul"))
+Oracle Span 6:  Savor => "Savor"
+Oracle Span 7:  Tell => tell-01
+NER Entity: (person :name (name :op "Paul"))
+NER Entity: (country :name (name :op "Savor"))
+Oracle Span 1:  bathroom => bathroom
+Oracle Span 2:  bedroom => bedroom
+Oracle Span 3:  lights => lights
+Oracle Span 4:  Turn => turn-07
+NER Entity: (person :name (name :op "Liam"))
+NER Entity: (person :name (name :op "Liam"))
+Oracle Span 1:  Liam => (person :name (name :op "Liam"))
+Oracle Span 2:  lights => lights
+Oracle Span 3:  Turn => turn-07
+NER Entity: (person :name (name :op "Liam"))
+Oracle Span 1:  5am => "5am"
+Oracle Span 2:  me => (person :name (name :op "Me"))
+Oracle Span 3:  tomorrow => tomorrow
+Oracle Span 4:  Wake => wake-01
+Oracle Span 1:  bathroom => bathroom
+Oracle Span 2:  lights => lights
+Oracle Span 3:  Turn => turn-13
+Oracle Span 1:  Turn => turn-13
+Oracle Span 2:  TV => "TV"
+Oracle Span 1:  bedroom => bedroom
+Oracle Span 2:  Turn => turn-13
+Oracle Span 3:  TV => (thing :name (name :op "TV"))
+Oracle Span 1:  5am => "5am"
+Oracle Span 2:  alarm => alarm
+Oracle Span 3:  Set => set-08
+Oracle Span 4:  tomorrow => tomorrow
+NER Entity: (person :name (name :op "Ask"))
+NER Entity: (person :name (name :op "Ask"))
+Oracle Span 1:  Ask => ask-02
+Oracle Span 2:  Liam => (person :name (name :op "Liam"))
+Oracle Span 3:  Michele => (person :name (name :op "Michele"))
+Oracle Span 4:  pick => pick-04
+Oracle Span 5:  today => today
+NER Entity: (person :name (name :op "Ask"))
+NER Entity: (person :name (name :op "Liam"))
+NER Entity: (person :name (name :op "Liam"))
+Oracle Span 1:  buy => buy-01
+Oracle Span 2:  Liam => (person :name (name :op "Liam"))
+Oracle Span 3:  me => (person :name (name :op "Me"))
+Oracle Span 4:  milk => milk
+Oracle Span 5:  Remind => remind-01
+NER Entity: (person :name (name :op "Liam"))
+Oracle Span 1:  49ers => (team :name (name :op "49ers"))
+Oracle Span 2:  game => (event :name (name :op "game"))
+Oracle Span 3:  Record => record-01
+Oracle Span 1:  alarm => alarm
+Oracle Span 2:  away => away
+Oracle Span 3:  Set => set-08
+Oracle Span 1:  68 => 68
+Oracle Span 2:  Set => set-02
+Oracle Span 3:  thermometer => thermometer
+Oracle Span 1:  68 => 68
+Oracle Span 2:  Set => set-02
+Oracle Span 3:  temperature => temperature
+                                   Avg objective value last pass: 0.0
+Pass 6
+Oracle Span 1:  68 => 68
+Oracle Span 2:  Set => set-02
+Oracle Span 3:  thermometer => thermometer
+Oracle Span 1:  5am => "5am"
+Oracle Span 2:  me => (person :name (name :op "Me"))
+Oracle Span 3:  tomorrow => tomorrow
+Oracle Span 4:  Wake => wake-01
+NER Entity: (person :name (name :op "Michele"))
+NER Entity: (person :name (name :op "Liam"))
+NER Entity: (person :name (name :op "Liam"))
+NER Entity: (person :name (name :op "Michele"))
+Oracle Span 1:  Ask => ask-02
+Oracle Span 2:  get => get-05
+Oracle Span 3:  Liam => (person :name (name :op "Liam"))
+Oracle Span 4:  Michele => (person :name (name :op "Michele"))
+NER Entity: (person :name (name :op "Liam"))
+NER Entity: (person :name (name :op "Michele"))
+NER Entity: (person :name (name :op "Liam"))
+NER Entity: (person :name (name :op "Liam"))
+Oracle Span 1:  buy => buy-01
+Oracle Span 2:  Liam => (person :name (name :op "Liam"))
+Oracle Span 3:  me => (person :name (name :op "Me"))
+Oracle Span 4:  milk => milk
+Oracle Span 5:  Remind => remind-01
+NER Entity: (person :name (name :op "Liam"))
+Oracle Span 1:  bathroom => bathroom
+Oracle Span 2:  lights => lights
+Oracle Span 3:  Turn => turn-13
+Oracle Span 1:  68 => 68
+Oracle Span 2:  Set => set-02
+Oracle Span 3:  temperature => temperature
+Oracle Span 1:  5am => "5am"
+Oracle Span 2:  alarm => alarm
+Oracle Span 3:  Set => set-08
+Oracle Span 4:  tomorrow => tomorrow
+NER Entity: (person :name (name :op "Ask"))
+NER Entity: (person :name (name :op "Ask"))
+Oracle Span 1:  Ask => ask-02
+Oracle Span 2:  Liam => (person :name (name :op "Liam"))
+Oracle Span 3:  Michele => (person :name (name :op "Michele"))
+Oracle Span 4:  pick => pick-04
+Oracle Span 5:  today => today
+NER Entity: (person :name (name :op "Ask"))
+NER Entity: (person :name (name :op "Paul"))
+NER Entity: (country :name (name :op "Savor"))
+NER Entity: (country :name (name :op "Savor"))
+NER Entity: (person :name (name :op "Paul"))
+Oracle Span 1:  7pm => "7pm"
+Oracle Span 2:  me => (person :name (name :op "Me"))
+Oracle Span 3:  meet => meet-03
+Oracle Span 4:  Monday => "Monday"
+Oracle Span 5:  Paul => (person :name (name :op "Paul"))
+Oracle Span 6:  Savor => "Savor"
+Oracle Span 7:  Tell => tell-01
+NER Entity: (person :name (name :op "Paul"))
+NER Entity: (country :name (name :op "Savor"))
+Oracle Span 1:  Turn => turn-13
+Oracle Span 2:  TV => "TV"
+Oracle Span 1:  49ers => (team :name (name :op "49ers"))
+Oracle Span 2:  game => (event :name (name :op "game"))
+Oracle Span 3:  Record => record-01
+NER Entity: (organization :name (name :op "Giants"))
+NER Entity: (organization :name (name :op "Giants"))
+Oracle Span 1:  Giants => (team :name (name :op "Giants"))
+Oracle Span 2:  next => next
+Oracle Span 3:  playing => play-01
+NER Entity: (organization :name (name :op "Giants"))
+Oracle Span 1:  bathroom => bathroom
+Oracle Span 2:  bedroom => bedroom
+Oracle Span 3:  lights => lights
+Oracle Span 4:  Turn => turn-07
+Oracle Span 1:  alarm => alarm
+Oracle Span 2:  away => away
+Oracle Span 3:  Set => set-08
+NER Entity: (person :name (name :op "Liam"))
+NER Entity: (person :name (name :op "Liam"))
+Oracle Span 1:  Liam => (person :name (name :op "Liam"))
+Oracle Span 2:  lights => lights
+Oracle Span 3:  Turn => turn-07
+NER Entity: (person :name (name :op "Liam"))
+Oracle Span 1:  bedroom => bedroom
+Oracle Span 2:  Turn => turn-13
+Oracle Span 3:  TV => (thing :name (name :op "TV"))
+                                   Avg objective value last pass: 0.0
+Pass 7
+NER Entity: (person :name (name :op "Ask"))
+NER Entity: (person :name (name :op "Ask"))
+Oracle Span 1:  Ask => ask-02
+Oracle Span 2:  Liam => (person :name (name :op "Liam"))
+Oracle Span 3:  Michele => (person :name (name :op "Michele"))
+Oracle Span 4:  pick => pick-04
+Oracle Span 5:  today => today
+NER Entity: (person :name (name :op "Ask"))
+Oracle Span 1:  Turn => turn-13
+Oracle Span 2:  TV => "TV"
+Oracle Span 1:  bedroom => bedroom
+Oracle Span 2:  Turn => turn-13
+Oracle Span 3:  TV => (thing :name (name :op "TV"))
+Oracle Span 1:  5am => "5am"
+Oracle Span 2:  me => (person :name (name :op "Me"))
+Oracle Span 3:  tomorrow => tomorrow
+Oracle Span 4:  Wake => wake-01
+Oracle Span 1:  49ers => (team :name (name :op "49ers"))
+Oracle Span 2:  game => (event :name (name :op "game"))
+Oracle Span 3:  Record => record-01
+NER Entity: (person :name (name :op "Liam"))
+NER Entity: (person :name (name :op "Liam"))
+Oracle Span 1:  buy => buy-01
+Oracle Span 2:  Liam => (person :name (name :op "Liam"))
+Oracle Span 3:  me => (person :name (name :op "Me"))
+Oracle Span 4:  milk => milk
+Oracle Span 5:  Remind => remind-01
+NER Entity: (person :name (name :op "Liam"))
+Oracle Span 1:  bathroom => bathroom
+Oracle Span 2:  bedroom => bedroom
+Oracle Span 3:  lights => lights
+Oracle Span 4:  Turn => turn-07
+Oracle Span 1:  bathroom => bathroom
+Oracle Span 2:  lights => lights
+Oracle Span 3:  Turn => turn-13
+NER Entity: (person :name (name :op "Liam"))
+NER Entity: (person :name (name :op "Liam"))
+Oracle Span 1:  Liam => (person :name (name :op "Liam"))
+Oracle Span 2:  lights => lights
+Oracle Span 3:  Turn => turn-07
+NER Entity: (person :name (name :op "Liam"))
+Oracle Span 1:  5am => "5am"
+Oracle Span 2:  alarm => alarm
+Oracle Span 3:  Set => set-08
+Oracle Span 4:  tomorrow => tomorrow
+NER Entity: (person :name (name :op "Paul"))
+NER Entity: (country :name (name :op "Savor"))
+NER Entity: (country :name (name :op "Savor"))
+NER Entity: (person :name (name :op "Paul"))
+Oracle Span 1:  7pm => "7pm"
+Oracle Span 2:  me => (person :name (name :op "Me"))
+Oracle Span 3:  meet => meet-03
+Oracle Span 4:  Monday => "Monday"
+Oracle Span 5:  Paul => (person :name (name :op "Paul"))
+Oracle Span 6:  Savor => "Savor"
+Oracle Span 7:  Tell => tell-01
+NER Entity: (person :name (name :op "Paul"))
+NER Entity: (country :name (name :op "Savor"))
+Oracle Span 1:  68 => 68
+Oracle Span 2:  Set => set-02
+Oracle Span 3:  temperature => temperature
+Oracle Span 1:  alarm => alarm
+Oracle Span 2:  away => away
+Oracle Span 3:  Set => set-08
+NER Entity: (organization :name (name :op "Giants"))
+NER Entity: (organization :name (name :op "Giants"))
+Oracle Span 1:  Giants => (team :name (name :op "Giants"))
+Oracle Span 2:  next => next
+Oracle Span 3:  playing => play-01
+NER Entity: (organization :name (name :op "Giants"))
+NER Entity: (person :name (name :op "Michele"))
+NER Entity: (person :name (name :op "Liam"))
+NER Entity: (person :name (name :op "Liam"))
+NER Entity: (person :name (name :op "Michele"))
+Oracle Span 1:  Ask => ask-02
+Oracle Span 2:  get => get-05
+Oracle Span 3:  Liam => (person :name (name :op "Liam"))
+Oracle Span 4:  Michele => (person :name (name :op "Michele"))
+NER Entity: (person :name (name :op "Liam"))
+NER Entity: (person :name (name :op "Michele"))
+Oracle Span 1:  68 => 68
+Oracle Span 2:  Set => set-02
+Oracle Span 3:  thermometer => thermometer
+                                   Avg objective value last pass: 0.0
+Pass 8
+Oracle Span 1:  5am => "5am"
+Oracle Span 2:  me => (person :name (name :op "Me"))
+Oracle Span 3:  tomorrow => tomorrow
+Oracle Span 4:  Wake => wake-01
+NER Entity: (person :name (name :op "Michele"))
+NER Entity: (person :name (name :op "Liam"))
+NER Entity: (person :name (name :op "Liam"))
+NER Entity: (person :name (name :op "Michele"))
+Oracle Span 1:  Ask => ask-02
+Oracle Span 2:  get => get-05
+Oracle Span 3:  Liam => (person :name (name :op "Liam"))
+Oracle Span 4:  Michele => (person :name (name :op "Michele"))
+NER Entity: (person :name (name :op "Liam"))
+NER Entity: (person :name (name :op "Michele"))
+Oracle Span 1:  Turn => turn-13
+Oracle Span 2:  TV => "TV"
+Oracle Span 1:  49ers => (team :name (name :op "49ers"))
+Oracle Span 2:  game => (event :name (name :op "game"))
+Oracle Span 3:  Record => record-01
+Oracle Span 1:  bathroom => bathroom
+Oracle Span 2:  lights => lights
+Oracle Span 3:  Turn => turn-13
+NER Entity: (person :name (name :op "Liam"))
+NER Entity: (person :name (name :op "Liam"))
+Oracle Span 1:  Liam => (person :name (name :op "Liam"))
+Oracle Span 2:  lights => lights
+Oracle Span 3:  Turn => turn-07
+NER Entity: (person :name (name :op "Liam"))
+NER Entity: (person :name (name :op "Paul"))
+NER Entity: (country :name (name :op "Savor"))
+NER Entity: (country :name (name :op "Savor"))
+NER Entity: (person :name (name :op "Paul"))
+Oracle Span 1:  7pm => "7pm"
+Oracle Span 2:  me => (person :name (name :op "Me"))
+Oracle Span 3:  meet => meet-03
+Oracle Span 4:  Monday => "Monday"
+Oracle Span 5:  Paul => (person :name (name :op "Paul"))
+Oracle Span 6:  Savor => "Savor"
+Oracle Span 7:  Tell => tell-01
+NER Entity: (person :name (name :op "Paul"))
+NER Entity: (country :name (name :op "Savor"))
+Oracle Span 1:  68 => 68
+Oracle Span 2:  Set => set-02
+Oracle Span 3:  temperature => temperature
+NER Entity: (organization :name (name :op "Giants"))
+NER Entity: (organization :name (name :op "Giants"))
+Oracle Span 1:  Giants => (team :name (name :op "Giants"))
+Oracle Span 2:  next => next
+Oracle Span 3:  playing => play-01
+NER Entity: (organization :name (name :op "Giants"))
+Oracle Span 1:  alarm => alarm
+Oracle Span 2:  away => away
+Oracle Span 3:  Set => set-08
+Oracle Span 1:  5am => "5am"
+Oracle Span 2:  alarm => alarm
+Oracle Span 3:  Set => set-08
+Oracle Span 4:  tomorrow => tomorrow
+Oracle Span 1:  bathroom => bathroom
+Oracle Span 2:  bedroom => bedroom
+Oracle Span 3:  lights => lights
+Oracle Span 4:  Turn => turn-07
+Oracle Span 1:  bedroom => bedroom
+Oracle Span 2:  Turn => turn-13
+Oracle Span 3:  TV => (thing :name (name :op "TV"))
+NER Entity: (person :name (name :op "Ask"))
+NER Entity: (person :name (name :op "Ask"))
+Oracle Span 1:  Ask => ask-02
+Oracle Span 2:  Liam => (person :name (name :op "Liam"))
+Oracle Span 3:  Michele => (person :name (name :op "Michele"))
+Oracle Span 4:  pick => pick-04
+Oracle Span 5:  today => today
+NER Entity: (person :name (name :op "Ask"))
+NER Entity: (person :name (name :op "Liam"))
+NER Entity: (person :name (name :op "Liam"))
+Oracle Span 1:  buy => buy-01
+Oracle Span 2:  Liam => (person :name (name :op "Liam"))
+Oracle Span 3:  me => (person :name (name :op "Me"))
+Oracle Span 4:  milk => milk
+Oracle Span 5:  Remind => remind-01
+NER Entity: (person :name (name :op "Liam"))
+Oracle Span 1:  68 => 68
+Oracle Span 2:  Set => set-02
+Oracle Span 3:  thermometer => thermometer
+                                   Avg objective value last pass: 0.0
+Pass 9
+Oracle Span 1:  68 => 68
+Oracle Span 2:  Set => set-02
+Oracle Span 3:  temperature => temperature
+Oracle Span 1:  bathroom => bathroom
+Oracle Span 2:  bedroom => bedroom
+Oracle Span 3:  lights => lights
+Oracle Span 4:  Turn => turn-07
+Oracle Span 1:  bedroom => bedroom
+Oracle Span 2:  Turn => turn-13
+Oracle Span 3:  TV => (thing :name (name :op "TV"))
+NER Entity: (person :name (name :op "Michele"))
+NER Entity: (person :name (name :op "Liam"))
+NER Entity: (person :name (name :op "Liam"))
+NER Entity: (person :name (name :op "Michele"))
+Oracle Span 1:  Ask => ask-02
+Oracle Span 2:  get => get-05
+Oracle Span 3:  Liam => (person :name (name :op "Liam"))
+Oracle Span 4:  Michele => (person :name (name :op "Michele"))
+NER Entity: (person :name (name :op "Liam"))
+NER Entity: (person :name (name :op "Michele"))
+NER Entity: (person :name (name :op "Liam"))
+NER Entity: (person :name (name :op "Liam"))
+Oracle Span 1:  buy => buy-01
+Oracle Span 2:  Liam => (person :name (name :op "Liam"))
+Oracle Span 3:  me => (person :name (name :op "Me"))
+Oracle Span 4:  milk => milk
+Oracle Span 5:  Remind => remind-01
+NER Entity: (person :name (name :op "Liam"))
+NER Entity: (organization :name (name :op "Giants"))
+NER Entity: (organization :name (name :op "Giants"))
+Oracle Span 1:  Giants => (team :name (name :op "Giants"))
+Oracle Span 2:  next => next
+Oracle Span 3:  playing => play-01
+NER Entity: (organization :name (name :op "Giants"))
+Oracle Span 1:  5am => "5am"
+Oracle Span 2:  alarm => alarm
+Oracle Span 3:  Set => set-08
+Oracle Span 4:  tomorrow => tomorrow
+Oracle Span 1:  Turn => turn-13
+Oracle Span 2:  TV => "TV"
+NER Entity: (person :name (name :op "Liam"))
+NER Entity: (person :name (name :op "Liam"))
+Oracle Span 1:  Liam => (person :name (name :op "Liam"))
+Oracle Span 2:  lights => lights
+Oracle Span 3:  Turn => turn-07
+NER Entity: (person :name (name :op "Liam"))
+Oracle Span 1:  49ers => (team :name (name :op "49ers"))
+Oracle Span 2:  game => (event :name (name :op "game"))
+Oracle Span 3:  Record => record-01
+NER Entity: (person :name (name :op "Ask"))
+NER Entity: (person :name (name :op "Ask"))
+Oracle Span 1:  Ask => ask-02
+Oracle Span 2:  Liam => (person :name (name :op "Liam"))
+Oracle Span 3:  Michele => (person :name (name :op "Michele"))
+Oracle Span 4:  pick => pick-04
+Oracle Span 5:  today => today
+NER Entity: (person :name (name :op "Ask"))
+Oracle Span 1:  bathroom => bathroom
+Oracle Span 2:  lights => lights
+Oracle Span 3:  Turn => turn-13
+Oracle Span 1:  alarm => alarm
+Oracle Span 2:  away => away
+Oracle Span 3:  Set => set-08
+Oracle Span 1:  68 => 68
+Oracle Span 2:  Set => set-02
+Oracle Span 3:  thermometer => thermometer
+NER Entity: (person :name (name :op "Paul"))
+NER Entity: (country :name (name :op "Savor"))
+NER Entity: (country :name (name :op "Savor"))
+NER Entity: (person :name (name :op "Paul"))
+Oracle Span 1:  7pm => "7pm"
+Oracle Span 2:  me => (person :name (name :op "Me"))
+Oracle Span 3:  meet => meet-03
+Oracle Span 4:  Monday => "Monday"
+Oracle Span 5:  Paul => (person :name (name :op "Paul"))
+Oracle Span 6:  Savor => "Savor"
+Oracle Span 7:  Tell => tell-01
+NER Entity: (person :name (name :op "Paul"))
+NER Entity: (country :name (name :op "Savor"))
+Oracle Span 1:  5am => "5am"
+Oracle Span 2:  me => (person :name (name :op "Me"))
+Oracle Span 3:  tomorrow => tomorrow
+Oracle Span 4:  Wake => wake-01
+                                   Avg objective value last pass: 0.0
+Pass 10
+Oracle Span 1:  68 => 68
+Oracle Span 2:  Set => set-02
+Oracle Span 3:  temperature => temperature
+NER Entity: (person :name (name :op "Liam"))
+NER Entity: (person :name (name :op "Liam"))
+Oracle Span 1:  Liam => (person :name (name :op "Liam"))
+Oracle Span 2:  lights => lights
+Oracle Span 3:  Turn => turn-07
+NER Entity: (person :name (name :op "Liam"))
+NER Entity: (person :name (name :op "Michele"))
+NER Entity: (person :name (name :op "Liam"))
+NER Entity: (person :name (name :op "Liam"))
+NER Entity: (person :name (name :op "Michele"))
+Oracle Span 1:  Ask => ask-02
+Oracle Span 2:  get => get-05
+Oracle Span 3:  Liam => (person :name (name :op "Liam"))
+Oracle Span 4:  Michele => (person :name (name :op "Michele"))
+NER Entity: (person :name (name :op "Liam"))
+NER Entity: (person :name (name :op "Michele"))
+Oracle Span 1:  68 => 68
+Oracle Span 2:  Set => set-02
+Oracle Span 3:  thermometer => thermometer
+NER Entity: (person :name (name :op "Ask"))
+NER Entity: (person :name (name :op "Ask"))
+Oracle Span 1:  Ask => ask-02
+Oracle Span 2:  Liam => (person :name (name :op "Liam"))
+Oracle Span 3:  Michele => (person :name (name :op "Michele"))
+Oracle Span 4:  pick => pick-04
+Oracle Span 5:  today => today
+NER Entity: (person :name (name :op "Ask"))
+Oracle Span 1:  5am => "5am"
+Oracle Span 2:  alarm => alarm
+Oracle Span 3:  Set => set-08
+Oracle Span 4:  tomorrow => tomorrow
+Oracle Span 1:  bedroom => bedroom
+Oracle Span 2:  Turn => turn-13
+Oracle Span 3:  TV => (thing :name (name :op "TV"))
+NER Entity: (person :name (name :op "Liam"))
+NER Entity: (person :name (name :op "Liam"))
+Oracle Span 1:  buy => buy-01
+Oracle Span 2:  Liam => (person :name (name :op "Liam"))
+Oracle Span 3:  me => (person :name (name :op "Me"))
+Oracle Span 4:  milk => milk
+Oracle Span 5:  Remind => remind-01
+NER Entity: (person :name (name :op "Liam"))
+Oracle Span 1:  5am => "5am"
+Oracle Span 2:  me => (person :name (name :op "Me"))
+Oracle Span 3:  tomorrow => tomorrow
+Oracle Span 4:  Wake => wake-01
+Oracle Span 1:  alarm => alarm
+Oracle Span 2:  away => away
+Oracle Span 3:  Set => set-08
+Oracle Span 1:  bathroom => bathroom
+Oracle Span 2:  lights => lights
+Oracle Span 3:  Turn => turn-13
+NER Entity: (person :name (name :op "Paul"))
+NER Entity: (country :name (name :op "Savor"))
+NER Entity: (country :name (name :op "Savor"))
+NER Entity: (person :name (name :op "Paul"))
+Oracle Span 1:  7pm => "7pm"
+Oracle Span 2:  me => (person :name (name :op "Me"))
+Oracle Span 3:  meet => meet-03
+Oracle Span 4:  Monday => "Monday"
+Oracle Span 5:  Paul => (person :name (name :op "Paul"))
+Oracle Span 6:  Savor => "Savor"
+Oracle Span 7:  Tell => tell-01
+NER Entity: (person :name (name :op "Paul"))
+NER Entity: (country :name (name :op "Savor"))
+NER Entity: (organization :name (name :op "Giants"))
+NER Entity: (organization :name (name :op "Giants"))
+Oracle Span 1:  Giants => (team :name (name :op "Giants"))
+Oracle Span 2:  next => next
+Oracle Span 3:  playing => play-01
+NER Entity: (organization :name (name :op "Giants"))
+Oracle Span 1:  bathroom => bathroom
+Oracle Span 2:  bedroom => bedroom
+Oracle Span 3:  lights => lights
+Oracle Span 4:  Turn => turn-07
+Oracle Span 1:  Turn => turn-13
+Oracle Span 2:  TV => "TV"
+Oracle Span 1:  49ers => (team :name (name :op "49ers"))
+Oracle Span 2:  game => (event :name (name :op "game"))
+Oracle Span 3:  Record => record-01
+                                   Avg objective value last pass: 0.0
+Writing out weights... done

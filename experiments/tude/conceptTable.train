@@ -1,0 +1,39 @@
+5am ||| "5am" ||| N=2 c|p=0.0
+Set ||| set-08 ||| N=2 c|p=-1.3862943611198906
+Set ||| set-02 ||| N=2 c|p=-1.3862943611198906
+next ||| next ||| N=1 c|p=0.0
+Remind ||| remind-01 ||| N=1 c|p=0.0
+lights ||| lights ||| N=3 c|p=0.0
+Turn ||| turn-13 ||| N=3 c|p=-1.2039728043259361
+Turn ||| turn-07 ||| N=2 c|p=-1.6094379124341003
+Michele ||| (person :name (name :op "Michele")) ||| N=2 c|p=0.0
+Ask ||| ask-02 ||| N=2 c|p=0.0
+game ||| (event :name (name :op "game")) ||| N=1 c|p=0.0
+me ||| (person :name (name :op "Me")) ||| N=3 c|p=0.0
+bedroom ||| bedroom ||| N=2 c|p=0.0
+Giants ||| (team :name (name :op "Giants")) ||| N=1 c|p=0.0
+get ||| get-05 ||| N=1 c|p=0.0
+playing ||| play-01 ||| N=1 c|p=0.0
+TV ||| (thing :name (name :op "TV")) ||| N=1 c|p=-1.3862943611198906
+TV ||| "TV" ||| N=1 c|p=-1.3862943611198906
+today ||| today ||| N=1 c|p=-0.6931471805599453
+away ||| away ||| N=1 c|p=0.0
+68 ||| 68 ||| N=2 c|p=0.0
+49ers ||| (team :name (name :op "49ers")) ||| N=1 c|p=0.0
+buy ||| buy-01 ||| N=1 c|p=0.0
+Tell ||| tell-01 ||| N=1 c|p=0.0
+pick ||| pick-04 ||| N=1 c|p=0.0
+thermometer ||| thermometer ||| N=1 c|p=0.0
+Paul ||| (person :name (name :op "Paul")) ||| N=1 c|p=0.0
+Record ||| record-01 ||| N=1 c|p=0.0
+meet ||| meet-03 ||| N=1 c|p=0.0
+alarm ||| alarm ||| N=2 c|p=0.0
+tomorrow ||| tomorrow ||| N=2 c|p=0.0
+Monday ||| "Monday" ||| N=1 c|p=0.0
+milk ||| milk ||| N=1 c|p=0.0
+Liam ||| (person :name (name :op "Liam")) ||| N=4 c|p=0.0
+7pm ||| "7pm" ||| N=1 c|p=0.0
+Savor ||| "Savor" ||| N=1 c|p=0.0
+Wake ||| wake-01 ||| N=1 c|p=0.0
+temperature ||| temperature ||| N=1 c|p=0.0
+bathroom ||| bathroom ||| N=2 c|p=0.0

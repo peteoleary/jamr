@@ -1,0 +1,3869 @@
+Stage1 features = List(length, count)
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Pass 1
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Remind me to buy milk for Liam today
+
+Langrangian relaxation converged after 7 iterations. Delta = 0.0
+Spans:
+Span 1:  Liam => (person :name (name :op "Liam"))
+Span 2:  me => (person :name (name :op "Me"))
+Span 3:  Remind => remind-01
+Span 4:  buy => buy-01
+Span 5:  milk => milk
+AMR:
+(m2 / milk, ARG0, b / buy-01)
+(n10 / name, op, "Me")
+(n11 / name, op, "Liam")
+(p10 / person, accompanier, b / buy-01)
+(p10 / person, accompanier, p11 / person)
+(p10 / person, accompanier, r / remind-01)
+(p10 / person, name, n10 / name)
+(p11 / person, name, n11 / name)
+
+Oracle:
+(b / buy-01, ARG0, p10 / person)
+(b / buy-01, ARG1, m2 / milk)
+(b / buy-01, ARG4, p11 / person)
+(n10 / name, op, "Me")
+(n11 / name, op, "Liam")
+(p10 / person, name, n10 / name)
+(p11 / person, name, n11 / name)
+(r / remind-01, ARG1, b / buy-01)
+(r / remind-01, ARG2, p10 / person)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Set my alarm for 5am tomorrow morning
+
+Langrangian relaxation converged after 25 iterations. Delta = 0.0
+Spans:
+Span 1:  Set => set-08
+Span 2:  5am => "5am"
+Span 3:  tomorrow => tomorrow
+Span 4:  alarm => alarm
+AMR:
+(5 / "5am", ARG0, a / alarm)
+(5 / "5am", ARG2, t2 / tomorrow)
+(a / alarm, ARG2, 5 / "5am")
+(a / alarm, ARG4, t2 / tomorrow)
+(s / set-08, age, 5 / "5am")
+(s / set-08, age, a / alarm)
+(t2 / tomorrow, ARG2, 5 / "5am")
+(t2 / tomorrow, ARG4, a / alarm)
+
+Oracle:
+(s / set-08, ARG1, a / alarm)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Tell Paul to meet me at Savor at 7pm on Monday
+
+Langrangian relaxation converged after 15 iterations. Delta = 0.0
+Spans:
+Span 1:  me => (person :name (name :op "Me"))
+Span 2:  Paul => (person :name (name :op "Paul"))
+Span 3:  Tell => tell-01
+Span 4:  meet => meet-03
+Span 5:  Savor => "Savor"
+Span 6:  7pm => "7pm"
+Span 7:  Monday => "Monday"
+AMR:
+(7 / "7pm", ARG1, M / "Monday")
+(M / "Monday", ARG1, 7 / "7pm")
+(S / "Savor", ARG1, m / meet-03)
+(m / meet-03, ARG1, 7 / "7pm")
+(m / meet-03, ARG4, S / "Savor")
+(n7 / name, ARG1, n8 / name)
+(n7 / name, op, "Me")
+(n8 / name, op, "Paul")
+(p8 / person, name, n7 / name)
+(p9 / person, name, n8 / name)
+(t2 / tell-01, ARG0, n8 / name)
+(t2 / tell-01, ARG1, m / meet-03)
+
+Oracle:
+(m / meet-03, ARG0, p8 / person)
+(m / meet-03, ARG0, p9 / person)
+(m / meet-03, location, S / "Savor")
+(m / meet-03, time, 7 / "7pm")
+(m / meet-03, weekday, M / "Monday")
+(n7 / name, op, "Me")
+(n8 / name, op, "Paul")
+(p8 / person, name, n7 / name)
+(p9 / person, name, n8 / name)
+(t2 / tell-01, ARG0, p8 / person)
+(t2 / tell-01, ARG1, m / meet-03)
+(t2 / tell-01, ARG2, p9 / person)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Turn off the lights in my bedroom and bathroom
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Turn => turn-07
+Span 2:  lights => lights
+Span 3:  bathroom => bathroom
+Span 4:  bedroom => bedroom
+AMR:
+(t4 / turn-07, ARG1, l2 / lights)
+(t4 / turn-07, weekday, b3 / bedroom)
+(t4 / turn-07, weekday, b4 / bathroom)
+
+Oracle:
+(l2 / lights, location, b3 / bedroom)
+(l2 / lights, location, b4 / bathroom)
+(t4 / turn-07, ARG1, l2 / lights)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Ask Michele to get Liam .
+
+Langrangian relaxation converged after 14 iterations. Delta = 0.0
+Spans:
+Span 1:  Liam => (person :name (name :op "Liam"))
+Span 2:  Michele => (person :name (name :op "Michele"))
+Span 3:  Ask => ask-02
+Span 4:  get => get-05
+AMR:
+(a / ask-02, ARG1, n / name)
+(a / ask-02, ARG2, p / person)
+(a / ask-02, location, g / get-05)
+(a / ask-02, location, n2 / name)
+(a / ask-02, location, p2 / person)
+(g / get-05, ARG0, p / person)
+(g / get-05, location, a / ask-02)
+(g / get-05, location, n / name)
+(g / get-05, location, n2 / name)
+(g / get-05, location, p2 / person)
+(n / name, location, n2 / name)
+(n / name, location, p / person)
+(n / name, location, p2 / person)
+(n / name, op, "Michele")
+(n2 / name, location, n / name)
+(n2 / name, location, p / person)
+(n2 / name, location, p2 / person)
+(n2 / name, op, "Liam")
+(p / person, location, n / name)
+(p / person, location, n2 / name)
+(p / person, location, p2 / person)
+(p / person, name, n / name)
+(p2 / person, location, a / ask-02)
+(p2 / person, location, n / name)
+(p2 / person, location, n2 / name)
+(p2 / person, location, p / person)
+(p2 / person, name, n2 / name)
+
+Oracle:
+(a / ask-02, ARG1, g / get-05)
+(a / ask-02, ARG2, p / person)
+(g / get-05, ARG0, p / person)
+(g / get-05, ARG1, p2 / person)
+(n / name, op, "Michele")
+(n2 / name, op, "Liam")
+(p / person, name, n / name)
+(p2 / person, name, n2 / name)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Ask Michele to pick up Liam today
+
+Langrangian relaxation converged after 7 iterations. Delta = 0.0
+Spans:
+Span 1:  Liam => (person :name (name :op "Liam"))
+Span 2:  Michele => (person :name (name :op "Michele"))
+Span 3:  Ask => ask-02
+Span 4:  pick => pick-04
+Span 5:  today => today
+AMR:
+(a / ask-02, ARG0, t / today)
+(a / ask-02, ARG1, p6 / pick-04)
+(a / ask-02, ARG2, p5 / person)
+(n5 / name, op, "Michele")
+(n6 / name, op, "Liam")
+(p5 / person, name, n5 / name)
+(p6 / pick-04, ARG0, p5 / person)
+(p6 / pick-04, ARG1, p7 / person)
+(p7 / person, name, n6 / name)
+
+Oracle:
+(a / ask-02, ARG1, p6 / pick-04)
+(a / ask-02, ARG2, p5 / person)
+(n5 / name, op, "Michele")
+(n6 / name, op, "Liam")
+(p5 / person, name, n5 / name)
+(p6 / pick-04, ARG0, p5 / person)
+(p6 / pick-04, ARG1, p7 / person)
+(p6 / pick-04, time, t / today)
+(p7 / person, name, n6 / name)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Turn on the TV
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Turn => turn-13
+Span 2:  TV => "TV"
+AMR:
+(t8 / turn-13, time, T / "TV")
+
+Oracle:
+(t8 / turn-13, ARG1, T / "TV")
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Wake me up tomorrow at 5am
+
+Langrangian relaxation converged after 4 iterations. Delta = 0.0
+Spans:
+Span 1:  me => (person :name (name :op "Me"))
+Span 2:  Wake => wake-01
+Span 3:  tomorrow => tomorrow
+Span 4:  5am => "5am"
+AMR:
+(n5 / name, op, "Me")
+(p4 / person, name, n5 / name)
+(w / wake-01, ARG0, p4 / person)
+(w / wake-01, ARG1, 5 / "5am")
+(w / wake-01, ARG2, n5 / name)
+(w / wake-01, location, t2 / tomorrow)
+
+Oracle:
+(n5 / name, op, "Me")
+(p4 / person, name, n5 / name)
+(w / wake-01, ARG0, p4 / person)
+(w / wake-01, day, t2 / tomorrow)
+(w / wake-01, time, 5 / "5am")
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Set the temperature to 68 degrees
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Set => set-02
+Span 2:  temperature => temperature
+Span 3:  68 => 68
+AMR:
+(s / set-02, ARG1, t7 / temperature)
+(s / set-02, time, 6 / 68)
+
+Oracle:
+(s / set-02, ARG2, t7 / temperature)
+(t7 / temperature, quant, 6 / 68)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Turn off the lights in Liam 's room
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Liam => (person :name (name :op "Liam"))
+Span 2:  Turn => turn-07
+Span 3:  lights => lights
+AMR:
+(n15 / name, op, "Liam")
+(p12 / person, name, n15 / name)
+(t4 / turn-07, ARG1, l2 / lights)
+(t4 / turn-07, time, p12 / person)
+
+Oracle:
+(n15 / name, op, "Liam")
+(p12 / person, name, n15 / name)
+(t4 / turn-07, ARG1, l2 / lights)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Record the 49ers game this weekend
+
+Langrangian relaxation converged after 2 iterations. Delta = 0.0
+Spans:
+Span 1:  game => (event :name (name :op "game"))
+Span 2:  49ers => (team :name (name :op "49ers"))
+Span 3:  Record => record-01
+AMR:
+(e / event, name, n11 / name)
+(n11 / name, op, "game")
+(n12 / name, op, "49ers")
+(r / record-01, ARG0, t11 / team)
+(r / record-01, ARG1, e / event)
+(t11 / team, name, n12 / name)
+
+Oracle:
+(e / event, name, n11 / name)
+(e / event, poss, t11 / team)
+(n11 / name, op, "game")
+(n12 / name, op, "49ers")
+(r / record-01, ARG1, e / event)
+(t11 / team, name, n12 / name)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Turn on the lights in my bathroom
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Turn => turn-13
+Span 2:  lights => lights
+Span 3:  bathroom => bathroom
+AMR:
+(l / lights, location, b2 / bathroom)
+(t4 / turn-13, ARG1, l / lights)
+
+Oracle:
+(l / lights, location, b2 / bathroom)
+(t4 / turn-13, ARG1, l / lights)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Turn on the TV in my bedroom
+
+Langrangian relaxation converged after 8 iterations. Delta = 0.0
+Spans:
+Span 1:  TV => (thing :name (name :op "TV"))
+Span 2:  Turn => turn-13
+Span 3:  bedroom => bedroom
+AMR:
+(n8 / name, location, b / bedroom)
+(n8 / name, op, "TV")
+(t10 / thing, location, b / bedroom)
+(t10 / thing, name, n8 / name)
+(t8 / turn-13, day, n8 / name)
+(t8 / turn-13, day, t10 / thing)
+
+Oracle:
+(n8 / name, op, "TV")
+(t10 / thing, location, b / bedroom)
+(t10 / thing, name, n8 / name)
+(t8 / turn-13, ARG1, t10 / thing)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+When are the Giants playing next ?
+
+Langrangian relaxation converged after 7 iterations. Delta = 0.0
+Spans:
+Span 1:  Giants => (team :name (name :op "Giants"))
+Span 2:  playing => play-01
+Span 3:  next => next
+AMR:
+(n16 / name, op, "Giants")
+(p6 / play-01, ARG0, t13 / team)
+(p6 / play-01, ARG2, n17 / next)
+(t13 / team, name, n16 / name)
+
+Oracle:
+(n16 / name, op, "Giants")
+(p6 / play-01, ARG0, t13 / team)
+(t13 / team, name, n16 / name)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Set the thermometer to 68 degrees
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Set => set-02
+Span 2:  68 => 68
+Span 3:  thermometer => thermometer
+AMR:
+(s / set-02, ARG2, t5 / thermometer)
+(t5 / thermometer, quant, 6 / 68)
+
+Oracle:
+(s / set-02, ARG1, t5 / thermometer)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Set the alarm to away
+
+Langrangian relaxation converged after 4 iterations. Delta = 0.0
+Spans:
+Span 1:  Set => set-08
+Span 2:  away => away
+Span 3:  alarm => alarm
+AMR:
+(s / set-08, ARG0, a2 / away)
+(s / set-08, ARG1, a / alarm)
+
+Oracle:
+(s / set-08, ARG1, a / alarm)
+(s / set-08, ARG2, a2 / away)
+
+                                   Avg objective value last pass: 12.963233118357117
+Pass 2
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Turn on the lights in my bathroom
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Turn => turn-13
+Span 2:  lights => lights
+Span 3:  bathroom => bathroom
+AMR:
+(l / lights, location, b2 / bathroom)
+(t4 / turn-13, ARG1, l / lights)
+
+Oracle:
+(l / lights, location, b2 / bathroom)
+(t4 / turn-13, ARG1, l / lights)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Wake me up tomorrow at 5am
+
+Langrangian relaxation converged after 2 iterations. Delta = 0.0
+Spans:
+Span 1:  me => (person :name (name :op "Me"))
+Span 2:  Wake => wake-01
+Span 3:  tomorrow => tomorrow
+Span 4:  5am => "5am"
+AMR:
+(n5 / name, op, "Me")
+(p4 / person, name, n5 / name)
+(w / wake-01, ARG0, p4 / person)
+(w / wake-01, ARG1, t2 / tomorrow)
+(w / wake-01, time, 5 / "5am")
+
+Oracle:
+(n5 / name, op, "Me")
+(p4 / person, name, n5 / name)
+(w / wake-01, ARG0, p4 / person)
+(w / wake-01, day, t2 / tomorrow)
+(w / wake-01, time, 5 / "5am")
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Turn off the lights in my bedroom and bathroom
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Turn => turn-07
+Span 2:  lights => lights
+Span 3:  bathroom => bathroom
+Span 4:  bedroom => bedroom
+AMR:
+(l2 / lights, location, b3 / bedroom)
+(l2 / lights, location, b4 / bathroom)
+(t4 / turn-07, ARG1, l2 / lights)
+
+Oracle:
+(l2 / lights, location, b3 / bedroom)
+(l2 / lights, location, b4 / bathroom)
+(t4 / turn-07, ARG1, l2 / lights)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+When are the Giants playing next ?
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Giants => (team :name (name :op "Giants"))
+Span 2:  playing => play-01
+Span 3:  next => next
+AMR:
+(n16 / name, op, "Giants")
+(n17 / next, poss, p6 / play-01)
+(p6 / play-01, ARG1, t13 / team)
+(t13 / team, name, n16 / name)
+
+Oracle:
+(n16 / name, op, "Giants")
+(p6 / play-01, ARG0, t13 / team)
+(t13 / team, name, n16 / name)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Tell Paul to meet me at Savor at 7pm on Monday
+
+Langrangian relaxation converged after 19 iterations. Delta = 0.0
+Spans:
+Span 1:  me => (person :name (name :op "Me"))
+Span 2:  Paul => (person :name (name :op "Paul"))
+Span 3:  Tell => tell-01
+Span 4:  meet => meet-03
+Span 5:  Savor => "Savor"
+Span 6:  7pm => "7pm"
+Span 7:  Monday => "Monday"
+AMR:
+(m / meet-03, ARG0, p9 / person)
+(m / meet-03, ARG1, p8 / person)
+(m / meet-03, day, S / "Savor")
+(m / meet-03, time, 7 / "7pm")
+(m / meet-03, weekday, M / "Monday")
+(n7 / name, op, "Me")
+(n8 / name, op, "Paul")
+(p8 / person, name, n7 / name)
+(p9 / person, name, n8 / name)
+(t2 / tell-01, ARG0, p8 / person)
+(t2 / tell-01, ARG1, m / meet-03)
+(t2 / tell-01, ARG2, p9 / person)
+(t2 / tell-01, ARG3, n7 / name)
+
+Oracle:
+(m / meet-03, ARG0, p8 / person)
+(m / meet-03, ARG0, p9 / person)
+(m / meet-03, location, S / "Savor")
+(m / meet-03, time, 7 / "7pm")
+(m / meet-03, weekday, M / "Monday")
+(n7 / name, op, "Me")
+(n8 / name, op, "Paul")
+(p8 / person, name, n7 / name)
+(p9 / person, name, n8 / name)
+(t2 / tell-01, ARG0, p8 / person)
+(t2 / tell-01, ARG1, m / meet-03)
+(t2 / tell-01, ARG2, p9 / person)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Ask Michele to get Liam .
+
+Langrangian relaxation converged after 6 iterations. Delta = 0.0
+Spans:
+Span 1:  Liam => (person :name (name :op "Liam"))
+Span 2:  Michele => (person :name (name :op "Michele"))
+Span 3:  Ask => ask-02
+Span 4:  get => get-05
+AMR:
+(a / ask-02, ARG1, g / get-05)
+(g / get-05, ARG0, p / person)
+(g / get-05, ARG1, p2 / person)
+(n / name, op, "Michele")
+(n2 / name, op, "Liam")
+(p / person, name, n / name)
+(p2 / person, name, n2 / name)
+
+Oracle:
+(a / ask-02, ARG1, g / get-05)
+(a / ask-02, ARG2, p / person)
+(g / get-05, ARG0, p / person)
+(g / get-05, ARG1, p2 / person)
+(n / name, op, "Michele")
+(n2 / name, op, "Liam")
+(p / person, name, n / name)
+(p2 / person, name, n2 / name)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Ask Michele to pick up Liam today
+
+Langrangian relaxation converged after 8 iterations. Delta = 0.0
+Spans:
+Span 1:  Liam => (person :name (name :op "Liam"))
+Span 2:  Michele => (person :name (name :op "Michele"))
+Span 3:  Ask => ask-02
+Span 4:  pick => pick-04
+Span 5:  today => today
+AMR:
+(a / ask-02, ARG1, p6 / pick-04)
+(a / ask-02, ARG2, p5 / person)
+(n5 / name, op, "Michele")
+(n6 / name, op, "Liam")
+(p5 / person, name, n5 / name)
+(p6 / pick-04, ARG0, p5 / person)
+(p6 / pick-04, ARG1, p7 / person)
+(p6 / pick-04, time, t / today)
+(p7 / person, name, n6 / name)
+
+Oracle:
+(a / ask-02, ARG1, p6 / pick-04)
+(a / ask-02, ARG2, p5 / person)
+(n5 / name, op, "Michele")
+(n6 / name, op, "Liam")
+(p5 / person, name, n5 / name)
+(p6 / pick-04, ARG0, p5 / person)
+(p6 / pick-04, ARG1, p7 / person)
+(p6 / pick-04, time, t / today)
+(p7 / person, name, n6 / name)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Set the alarm to away
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Set => set-08
+Span 2:  away => away
+Span 3:  alarm => alarm
+AMR:
+(s / set-08, ARG1, a / alarm)
+(s / set-08, ARG2, a2 / away)
+
+Oracle:
+(s / set-08, ARG1, a / alarm)
+(s / set-08, ARG2, a2 / away)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Turn off the lights in Liam 's room
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Liam => (person :name (name :op "Liam"))
+Span 2:  Turn => turn-07
+Span 3:  lights => lights
+AMR:
+(n15 / name, op, "Liam")
+(p12 / person, location, t4 / turn-07)
+(p12 / person, name, n15 / name)
+(t4 / turn-07, ARG1, l2 / lights)
+
+Oracle:
+(n15 / name, op, "Liam")
+(p12 / person, name, n15 / name)
+(t4 / turn-07, ARG1, l2 / lights)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Turn on the TV in my bedroom
+
+Langrangian relaxation converged after 3 iterations. Delta = 0.0
+Spans:
+Span 1:  TV => (thing :name (name :op "TV"))
+Span 2:  Turn => turn-13
+Span 3:  bedroom => bedroom
+AMR:
+(n8 / name, op, "TV")
+(t10 / thing, location, b / bedroom)
+(t10 / thing, name, n8 / name)
+(t8 / turn-13, ARG1, t10 / thing)
+
+Oracle:
+(n8 / name, op, "TV")
+(t10 / thing, location, b / bedroom)
+(t10 / thing, name, n8 / name)
+(t8 / turn-13, ARG1, t10 / thing)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Set the thermometer to 68 degrees
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Set => set-02
+Span 2:  68 => 68
+Span 3:  thermometer => thermometer
+AMR:
+(s / set-02, ARG1, t5 / thermometer)
+(t5 / thermometer, time, 6 / 68)
+
+Oracle:
+(s / set-02, ARG1, t5 / thermometer)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Turn on the TV
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Turn => turn-13
+Span 2:  TV => "TV"
+AMR:
+(t8 / turn-13, ARG1, T / "TV")
+
+Oracle:
+(t8 / turn-13, ARG1, T / "TV")
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Record the 49ers game this weekend
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  game => (event :name (name :op "game"))
+Span 2:  49ers => (team :name (name :op "49ers"))
+Span 3:  Record => record-01
+AMR:
+(e / event, name, n11 / name)
+(e / event, poss, n12 / name)
+(e / event, poss, t11 / team)
+(n11 / name, op, "game")
+(n11 / name, poss, t11 / team)
+(n12 / name, op, "49ers")
+(r / record-01, ARG1, e / event)
+(t11 / team, name, n12 / name)
+
+Oracle:
+(e / event, name, n11 / name)
+(e / event, poss, t11 / team)
+(n11 / name, op, "game")
+(n12 / name, op, "49ers")
+(r / record-01, ARG1, e / event)
+(t11 / team, name, n12 / name)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Set my alarm for 5am tomorrow morning
+
+Langrangian relaxation converged after 2 iterations. Delta = 0.0
+Spans:
+Span 1:  Set => set-08
+Span 2:  5am => "5am"
+Span 3:  tomorrow => tomorrow
+Span 4:  alarm => alarm
+AMR:
+(5 / "5am", quant, s / set-08)
+(s / set-08, ARG1, a / alarm)
+(s / set-08, ARG5, t2 / tomorrow)
+
+Oracle:
+(s / set-08, ARG1, a / alarm)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Remind me to buy milk for Liam today
+
+Langrangian relaxation converged after 15 iterations. Delta = 0.0
+Spans:
+Span 1:  Liam => (person :name (name :op "Liam"))
+Span 2:  me => (person :name (name :op "Me"))
+Span 3:  Remind => remind-01
+Span 4:  buy => buy-01
+Span 5:  milk => milk
+AMR:
+(b / buy-01, ARG0, p10 / person)
+(b / buy-01, ARG1, m2 / milk)
+(b / buy-01, ARG2, n10 / name)
+(b / buy-01, ARG4, p11 / person)
+(b / buy-01, location, n11 / name)
+(n10 / name, op, "Me")
+(n11 / name, op, "Liam")
+(p10 / person, name, n10 / name)
+(p11 / person, name, n11 / name)
+(r / remind-01, ARG0, n10 / name)
+(r / remind-01, ARG1, b / buy-01)
+(r / remind-01, ARG2, p10 / person)
+
+Oracle:
+(b / buy-01, ARG0, p10 / person)
+(b / buy-01, ARG1, m2 / milk)
+(b / buy-01, ARG4, p11 / person)
+(n10 / name, op, "Me")
+(n11 / name, op, "Liam")
+(p10 / person, name, n10 / name)
+(p11 / person, name, n11 / name)
+(r / remind-01, ARG1, b / buy-01)
+(r / remind-01, ARG2, p10 / person)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Set the temperature to 68 degrees
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Set => set-02
+Span 2:  temperature => temperature
+Span 3:  68 => 68
+AMR:
+(s / set-02, ARG2, t7 / temperature)
+(t7 / temperature, quant, 6 / 68)
+
+Oracle:
+(s / set-02, ARG2, t7 / temperature)
+(t7 / temperature, quant, 6 / 68)
+
+                                   Avg objective value last pass: -3.03546345578762
+Pass 3
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Turn off the lights in Liam 's room
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Liam => (person :name (name :op "Liam"))
+Span 2:  Turn => turn-07
+Span 3:  lights => lights
+AMR:
+(l2 / lights, location, p12 / person)
+(n15 / name, op, "Liam")
+(p12 / person, name, n15 / name)
+(t4 / turn-07, ARG1, l2 / lights)
+
+Oracle:
+(n15 / name, op, "Liam")
+(p12 / person, name, n15 / name)
+(t4 / turn-07, ARG1, l2 / lights)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Turn off the lights in my bedroom and bathroom
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Turn => turn-07
+Span 2:  lights => lights
+Span 3:  bathroom => bathroom
+Span 4:  bedroom => bedroom
+AMR:
+(l2 / lights, location, b3 / bedroom)
+(l2 / lights, location, b4 / bathroom)
+(t4 / turn-07, ARG1, l2 / lights)
+
+Oracle:
+(l2 / lights, location, b3 / bedroom)
+(l2 / lights, location, b4 / bathroom)
+(t4 / turn-07, ARG1, l2 / lights)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+When are the Giants playing next ?
+
+Langrangian relaxation converged after 2 iterations. Delta = 0.0
+Spans:
+Span 1:  Giants => (team :name (name :op "Giants"))
+Span 2:  playing => play-01
+Span 3:  next => next
+AMR:
+(n16 / name, op, "Giants")
+(n17 / next, ARG1, t13 / team)
+(p6 / play-01, ARG0, t13 / team)
+(t13 / team, name, n16 / name)
+
+Oracle:
+(n16 / name, op, "Giants")
+(p6 / play-01, ARG0, t13 / team)
+(t13 / team, name, n16 / name)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Tell Paul to meet me at Savor at 7pm on Monday
+
+Langrangian relaxation converged after 6 iterations. Delta = 0.0
+Spans:
+Span 1:  me => (person :name (name :op "Me"))
+Span 2:  Paul => (person :name (name :op "Paul"))
+Span 3:  Tell => tell-01
+Span 4:  meet => meet-03
+Span 5:  Savor => "Savor"
+Span 6:  7pm => "7pm"
+Span 7:  Monday => "Monday"
+AMR:
+(m / meet-03, ARG0, p8 / person)
+(m / meet-03, location, S / "Savor")
+(m / meet-03, time, 7 / "7pm")
+(m / meet-03, weekday, M / "Monday")
+(n7 / name, op, "Me")
+(n8 / name, op, "Paul")
+(p8 / person, name, n7 / name)
+(p9 / person, name, n8 / name)
+(t2 / tell-01, ARG0, p8 / person)
+(t2 / tell-01, ARG1, m / meet-03)
+(t2 / tell-01, ARG2, p9 / person)
+
+Oracle:
+(m / meet-03, ARG0, p8 / person)
+(m / meet-03, ARG0, p9 / person)
+(m / meet-03, location, S / "Savor")
+(m / meet-03, time, 7 / "7pm")
+(m / meet-03, weekday, M / "Monday")
+(n7 / name, op, "Me")
+(n8 / name, op, "Paul")
+(p8 / person, name, n7 / name)
+(p9 / person, name, n8 / name)
+(t2 / tell-01, ARG0, p8 / person)
+(t2 / tell-01, ARG1, m / meet-03)
+(t2 / tell-01, ARG2, p9 / person)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Turn on the TV in my bedroom
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  TV => (thing :name (name :op "TV"))
+Span 2:  Turn => turn-13
+Span 3:  bedroom => bedroom
+AMR:
+(n8 / name, op, "TV")
+(t10 / thing, location, b / bedroom)
+(t10 / thing, name, n8 / name)
+(t8 / turn-13, ARG1, t10 / thing)
+
+Oracle:
+(n8 / name, op, "TV")
+(t10 / thing, location, b / bedroom)
+(t10 / thing, name, n8 / name)
+(t8 / turn-13, ARG1, t10 / thing)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Wake me up tomorrow at 5am
+
+Langrangian relaxation converged after 4 iterations. Delta = 0.0
+Spans:
+Span 1:  me => (person :name (name :op "Me"))
+Span 2:  Wake => wake-01
+Span 3:  tomorrow => tomorrow
+Span 4:  5am => "5am"
+AMR:
+(n5 / name, op, "Me")
+(p4 / person, name, n5 / name)
+(w / wake-01, ARG0, p4 / person)
+(w / wake-01, day, t2 / tomorrow)
+(w / wake-01, time, 5 / "5am")
+
+Oracle:
+(n5 / name, op, "Me")
+(p4 / person, name, n5 / name)
+(w / wake-01, ARG0, p4 / person)
+(w / wake-01, day, t2 / tomorrow)
+(w / wake-01, time, 5 / "5am")
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Set my alarm for 5am tomorrow morning
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Set => set-08
+Span 2:  5am => "5am"
+Span 3:  tomorrow => tomorrow
+Span 4:  alarm => alarm
+AMR:
+(5 / "5am", day, t2 / tomorrow)
+(s / set-08, ARG1, a / alarm)
+(t2 / tomorrow, location, s / set-08)
+
+Oracle:
+(s / set-08, ARG1, a / alarm)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Turn on the lights in my bathroom
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Turn => turn-13
+Span 2:  lights => lights
+Span 3:  bathroom => bathroom
+AMR:
+(l / lights, location, b2 / bathroom)
+(t4 / turn-13, ARG1, l / lights)
+
+Oracle:
+(l / lights, location, b2 / bathroom)
+(t4 / turn-13, ARG1, l / lights)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Turn on the TV
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Turn => turn-13
+Span 2:  TV => "TV"
+AMR:
+(t8 / turn-13, ARG1, T / "TV")
+
+Oracle:
+(t8 / turn-13, ARG1, T / "TV")
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Set the temperature to 68 degrees
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Set => set-02
+Span 2:  temperature => temperature
+Span 3:  68 => 68
+AMR:
+(s / set-02, ARG2, t7 / temperature)
+(t7 / temperature, quant, 6 / 68)
+
+Oracle:
+(s / set-02, ARG2, t7 / temperature)
+(t7 / temperature, quant, 6 / 68)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Remind me to buy milk for Liam today
+
+Langrangian relaxation converged after 4 iterations. Delta = 0.0
+Spans:
+Span 1:  Liam => (person :name (name :op "Liam"))
+Span 2:  me => (person :name (name :op "Me"))
+Span 3:  Remind => remind-01
+Span 4:  buy => buy-01
+Span 5:  milk => milk
+AMR:
+(b / buy-01, ARG0, p10 / person)
+(b / buy-01, ARG1, m2 / milk)
+(b / buy-01, ARG4, p11 / person)
+(n10 / name, op, "Me")
+(n11 / name, op, "Liam")
+(p10 / person, name, n10 / name)
+(p11 / person, name, n11 / name)
+(r / remind-01, ARG1, b / buy-01)
+(r / remind-01, ARG2, p10 / person)
+
+Oracle:
+(b / buy-01, ARG0, p10 / person)
+(b / buy-01, ARG1, m2 / milk)
+(b / buy-01, ARG4, p11 / person)
+(n10 / name, op, "Me")
+(n11 / name, op, "Liam")
+(p10 / person, name, n10 / name)
+(p11 / person, name, n11 / name)
+(r / remind-01, ARG1, b / buy-01)
+(r / remind-01, ARG2, p10 / person)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Record the 49ers game this weekend
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  game => (event :name (name :op "game"))
+Span 2:  49ers => (team :name (name :op "49ers"))
+Span 3:  Record => record-01
+AMR:
+(e / event, name, n11 / name)
+(e / event, poss, t11 / team)
+(n11 / name, op, "game")
+(n12 / name, op, "49ers")
+(r / record-01, ARG1, e / event)
+(t11 / team, name, n12 / name)
+
+Oracle:
+(e / event, name, n11 / name)
+(e / event, poss, t11 / team)
+(n11 / name, op, "game")
+(n12 / name, op, "49ers")
+(r / record-01, ARG1, e / event)
+(t11 / team, name, n12 / name)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Set the thermometer to 68 degrees
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Set => set-02
+Span 2:  68 => 68
+Span 3:  thermometer => thermometer
+AMR:
+(6 / 68, weekday, t5 / thermometer)
+(s / set-02, ARG1, t5 / thermometer)
+
+Oracle:
+(s / set-02, ARG1, t5 / thermometer)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Ask Michele to get Liam .
+
+Langrangian relaxation converged after 6 iterations. Delta = 0.0
+Spans:
+Span 1:  Liam => (person :name (name :op "Liam"))
+Span 2:  Michele => (person :name (name :op "Michele"))
+Span 3:  Ask => ask-02
+Span 4:  get => get-05
+AMR:
+(a / ask-02, ARG1, g / get-05)
+(a / ask-02, ARG2, p / person)
+(g / get-05, ARG0, p / person)
+(g / get-05, ARG1, p2 / person)
+(n / name, op, "Michele")
+(n2 / name, op, "Liam")
+(p / person, name, n / name)
+(p2 / person, name, n2 / name)
+
+Oracle:
+(a / ask-02, ARG1, g / get-05)
+(a / ask-02, ARG2, p / person)
+(g / get-05, ARG0, p / person)
+(g / get-05, ARG1, p2 / person)
+(n / name, op, "Michele")
+(n2 / name, op, "Liam")
+(p / person, name, n / name)
+(p2 / person, name, n2 / name)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Ask Michele to pick up Liam today
+
+Langrangian relaxation converged after 8 iterations. Delta = 0.0
+Spans:
+Span 1:  Liam => (person :name (name :op "Liam"))
+Span 2:  Michele => (person :name (name :op "Michele"))
+Span 3:  Ask => ask-02
+Span 4:  pick => pick-04
+Span 5:  today => today
+AMR:
+(a / ask-02, ARG1, p6 / pick-04)
+(a / ask-02, ARG2, p5 / person)
+(n5 / name, op, "Michele")
+(n6 / name, op, "Liam")
+(p5 / person, name, n5 / name)
+(p6 / pick-04, ARG0, p5 / person)
+(p6 / pick-04, ARG1, p7 / person)
+(p6 / pick-04, time, t / today)
+(p7 / person, name, n6 / name)
+
+Oracle:
+(a / ask-02, ARG1, p6 / pick-04)
+(a / ask-02, ARG2, p5 / person)
+(n5 / name, op, "Michele")
+(n6 / name, op, "Liam")
+(p5 / person, name, n5 / name)
+(p6 / pick-04, ARG0, p5 / person)
+(p6 / pick-04, ARG1, p7 / person)
+(p6 / pick-04, time, t / today)
+(p7 / person, name, n6 / name)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Set the alarm to away
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Set => set-08
+Span 2:  away => away
+Span 3:  alarm => alarm
+AMR:
+(s / set-08, ARG1, a / alarm)
+(s / set-08, ARG2, a2 / away)
+
+Oracle:
+(s / set-08, ARG1, a / alarm)
+(s / set-08, ARG2, a2 / away)
+
+                                   Avg objective value last pass: -7.123890165008664
+Pass 4
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Turn off the lights in my bedroom and bathroom
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Turn => turn-07
+Span 2:  lights => lights
+Span 3:  bathroom => bathroom
+Span 4:  bedroom => bedroom
+AMR:
+(l2 / lights, location, b3 / bedroom)
+(l2 / lights, location, b4 / bathroom)
+(t4 / turn-07, ARG1, l2 / lights)
+
+Oracle:
+(l2 / lights, location, b3 / bedroom)
+(l2 / lights, location, b4 / bathroom)
+(t4 / turn-07, ARG1, l2 / lights)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Ask Michele to get Liam .
+
+Langrangian relaxation converged after 6 iterations. Delta = 0.0
+Spans:
+Span 1:  Liam => (person :name (name :op "Liam"))
+Span 2:  Michele => (person :name (name :op "Michele"))
+Span 3:  Ask => ask-02
+Span 4:  get => get-05
+AMR:
+(a / ask-02, ARG1, g / get-05)
+(a / ask-02, ARG2, p / person)
+(g / get-05, ARG0, p / person)
+(g / get-05, ARG1, p2 / person)
+(n / name, op, "Michele")
+(n2 / name, op, "Liam")
+(p / person, name, n / name)
+(p2 / person, name, n2 / name)
+
+Oracle:
+(a / ask-02, ARG1, g / get-05)
+(a / ask-02, ARG2, p / person)
+(g / get-05, ARG0, p / person)
+(g / get-05, ARG1, p2 / person)
+(n / name, op, "Michele")
+(n2 / name, op, "Liam")
+(p / person, name, n / name)
+(p2 / person, name, n2 / name)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Set my alarm for 5am tomorrow morning
+
+Langrangian relaxation converged after 2 iterations. Delta = 0.0
+Spans:
+Span 1:  Set => set-08
+Span 2:  5am => "5am"
+Span 3:  tomorrow => tomorrow
+Span 4:  alarm => alarm
+AMR:
+(s / set-08, ARG0, 5 / "5am")
+(s / set-08, ARG1, a / alarm)
+(t2 / tomorrow, location, 5 / "5am")
+
+Oracle:
+(s / set-08, ARG1, a / alarm)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Remind me to buy milk for Liam today
+
+Langrangian relaxation converged after 3 iterations. Delta = 0.0
+Spans:
+Span 1:  Liam => (person :name (name :op "Liam"))
+Span 2:  me => (person :name (name :op "Me"))
+Span 3:  Remind => remind-01
+Span 4:  buy => buy-01
+Span 5:  milk => milk
+AMR:
+(b / buy-01, ARG0, p10 / person)
+(b / buy-01, ARG1, m2 / milk)
+(b / buy-01, ARG4, p11 / person)
+(n10 / name, op, "Me")
+(n11 / name, op, "Liam")
+(p10 / person, name, n10 / name)
+(p11 / person, name, n11 / name)
+(r / remind-01, ARG1, b / buy-01)
+(r / remind-01, ARG2, p10 / person)
+
+Oracle:
+(b / buy-01, ARG0, p10 / person)
+(b / buy-01, ARG1, m2 / milk)
+(b / buy-01, ARG4, p11 / person)
+(n10 / name, op, "Me")
+(n11 / name, op, "Liam")
+(p10 / person, name, n10 / name)
+(p11 / person, name, n11 / name)
+(r / remind-01, ARG1, b / buy-01)
+(r / remind-01, ARG2, p10 / person)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Turn on the lights in my bathroom
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Turn => turn-13
+Span 2:  lights => lights
+Span 3:  bathroom => bathroom
+AMR:
+(l / lights, location, b2 / bathroom)
+(t4 / turn-13, ARG1, l / lights)
+
+Oracle:
+(l / lights, location, b2 / bathroom)
+(t4 / turn-13, ARG1, l / lights)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Turn on the TV in my bedroom
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  TV => (thing :name (name :op "TV"))
+Span 2:  Turn => turn-13
+Span 3:  bedroom => bedroom
+AMR:
+(n8 / name, op, "TV")
+(t10 / thing, location, b / bedroom)
+(t10 / thing, name, n8 / name)
+(t8 / turn-13, ARG1, t10 / thing)
+
+Oracle:
+(n8 / name, op, "TV")
+(t10 / thing, location, b / bedroom)
+(t10 / thing, name, n8 / name)
+(t8 / turn-13, ARG1, t10 / thing)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Tell Paul to meet me at Savor at 7pm on Monday
+
+Langrangian relaxation converged after 8 iterations. Delta = 0.0
+Spans:
+Span 1:  me => (person :name (name :op "Me"))
+Span 2:  Paul => (person :name (name :op "Paul"))
+Span 3:  Tell => tell-01
+Span 4:  meet => meet-03
+Span 5:  Savor => "Savor"
+Span 6:  7pm => "7pm"
+Span 7:  Monday => "Monday"
+AMR:
+(m / meet-03, ARG0, p9 / person)
+(m / meet-03, location, S / "Savor")
+(m / meet-03, time, 7 / "7pm")
+(m / meet-03, weekday, M / "Monday")
+(n7 / name, op, "Me")
+(n8 / name, op, "Paul")
+(p8 / person, name, n7 / name)
+(p9 / person, name, n8 / name)
+(t2 / tell-01, ARG0, p8 / person)
+(t2 / tell-01, ARG1, m / meet-03)
+(t2 / tell-01, ARG2, p9 / person)
+
+Oracle:
+(m / meet-03, ARG0, p8 / person)
+(m / meet-03, ARG0, p9 / person)
+(m / meet-03, location, S / "Savor")
+(m / meet-03, time, 7 / "7pm")
+(m / meet-03, weekday, M / "Monday")
+(n7 / name, op, "Me")
+(n8 / name, op, "Paul")
+(p8 / person, name, n7 / name)
+(p9 / person, name, n8 / name)
+(t2 / tell-01, ARG0, p8 / person)
+(t2 / tell-01, ARG1, m / meet-03)
+(t2 / tell-01, ARG2, p9 / person)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Set the thermometer to 68 degrees
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Set => set-02
+Span 2:  68 => 68
+Span 3:  thermometer => thermometer
+AMR:
+(6 / 68, ARG1, s / set-02)
+(s / set-02, ARG1, t5 / thermometer)
+
+Oracle:
+(s / set-02, ARG1, t5 / thermometer)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+When are the Giants playing next ?
+
+Langrangian relaxation converged after 3 iterations. Delta = 0.0
+Spans:
+Span 1:  Giants => (team :name (name :op "Giants"))
+Span 2:  playing => play-01
+Span 3:  next => next
+AMR:
+(n16 / name, op, "Giants")
+(p6 / play-01, ARG0, t13 / team)
+(p6 / play-01, ARG1, n17 / next)
+(t13 / team, name, n16 / name)
+
+Oracle:
+(n16 / name, op, "Giants")
+(p6 / play-01, ARG0, t13 / team)
+(t13 / team, name, n16 / name)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Turn off the lights in Liam 's room
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Liam => (person :name (name :op "Liam"))
+Span 2:  Turn => turn-07
+Span 3:  lights => lights
+AMR:
+(n15 / name, op, "Liam")
+(p12 / person, beneficiary, l2 / lights)
+(p12 / person, name, n15 / name)
+(t4 / turn-07, ARG1, l2 / lights)
+
+Oracle:
+(n15 / name, op, "Liam")
+(p12 / person, name, n15 / name)
+(t4 / turn-07, ARG1, l2 / lights)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Set the alarm to away
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Set => set-08
+Span 2:  away => away
+Span 3:  alarm => alarm
+AMR:
+(s / set-08, ARG1, a / alarm)
+(s / set-08, ARG2, a2 / away)
+
+Oracle:
+(s / set-08, ARG1, a / alarm)
+(s / set-08, ARG2, a2 / away)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Set the temperature to 68 degrees
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Set => set-02
+Span 2:  temperature => temperature
+Span 3:  68 => 68
+AMR:
+(s / set-02, ARG2, t7 / temperature)
+(t7 / temperature, quant, 6 / 68)
+
+Oracle:
+(s / set-02, ARG2, t7 / temperature)
+(t7 / temperature, quant, 6 / 68)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Wake me up tomorrow at 5am
+
+Langrangian relaxation converged after 11 iterations. Delta = 0.0
+Spans:
+Span 1:  me => (person :name (name :op "Me"))
+Span 2:  Wake => wake-01
+Span 3:  tomorrow => tomorrow
+Span 4:  5am => "5am"
+AMR:
+(n5 / name, op, "Me")
+(p4 / person, name, n5 / name)
+(w / wake-01, ARG0, p4 / person)
+(w / wake-01, day, t2 / tomorrow)
+(w / wake-01, time, 5 / "5am")
+
+Oracle:
+(n5 / name, op, "Me")
+(p4 / person, name, n5 / name)
+(w / wake-01, ARG0, p4 / person)
+(w / wake-01, day, t2 / tomorrow)
+(w / wake-01, time, 5 / "5am")
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Turn on the TV
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Turn => turn-13
+Span 2:  TV => "TV"
+AMR:
+(t8 / turn-13, ARG1, T / "TV")
+
+Oracle:
+(t8 / turn-13, ARG1, T / "TV")
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Record the 49ers game this weekend
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  game => (event :name (name :op "game"))
+Span 2:  49ers => (team :name (name :op "49ers"))
+Span 3:  Record => record-01
+AMR:
+(e / event, name, n11 / name)
+(e / event, poss, t11 / team)
+(n11 / name, op, "game")
+(n12 / name, op, "49ers")
+(r / record-01, ARG1, e / event)
+(t11 / team, name, n12 / name)
+
+Oracle:
+(e / event, name, n11 / name)
+(e / event, poss, t11 / team)
+(n11 / name, op, "game")
+(n12 / name, op, "49ers")
+(r / record-01, ARG1, e / event)
+(t11 / team, name, n12 / name)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Ask Michele to pick up Liam today
+
+Langrangian relaxation converged after 7 iterations. Delta = 0.0
+Spans:
+Span 1:  Liam => (person :name (name :op "Liam"))
+Span 2:  Michele => (person :name (name :op "Michele"))
+Span 3:  Ask => ask-02
+Span 4:  pick => pick-04
+Span 5:  today => today
+AMR:
+(a / ask-02, ARG1, p6 / pick-04)
+(a / ask-02, ARG2, p5 / person)
+(n5 / name, op, "Michele")
+(n6 / name, op, "Liam")
+(p5 / person, name, n5 / name)
+(p6 / pick-04, ARG0, p5 / person)
+(p6 / pick-04, ARG1, p7 / person)
+(p6 / pick-04, time, t / today)
+(p7 / person, name, n6 / name)
+
+Oracle:
+(a / ask-02, ARG1, p6 / pick-04)
+(a / ask-02, ARG2, p5 / person)
+(n5 / name, op, "Michele")
+(n6 / name, op, "Liam")
+(p5 / person, name, n5 / name)
+(p6 / pick-04, ARG0, p5 / person)
+(p6 / pick-04, ARG1, p7 / person)
+(p6 / pick-04, time, t / today)
+(p7 / person, name, n6 / name)
+
+                                   Avg objective value last pass: -8.571440088570423
+Pass 5
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Set the thermometer to 68 degrees
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Set => set-02
+Span 2:  68 => 68
+Span 3:  thermometer => thermometer
+AMR:
+(s / set-02, ARG1, t5 / thermometer)
+(t5 / thermometer, cause, 6 / 68)
+
+Oracle:
+(s / set-02, ARG1, t5 / thermometer)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Tell Paul to meet me at Savor at 7pm on Monday
+
+Langrangian relaxation converged after 12 iterations. Delta = 0.0
+Spans:
+Span 1:  me => (person :name (name :op "Me"))
+Span 2:  Paul => (person :name (name :op "Paul"))
+Span 3:  Tell => tell-01
+Span 4:  meet => meet-03
+Span 5:  Savor => "Savor"
+Span 6:  7pm => "7pm"
+Span 7:  Monday => "Monday"
+AMR:
+(m / meet-03, ARG0, p8 / person)
+(m / meet-03, ARG2, p9 / person)
+(m / meet-03, location, S / "Savor")
+(m / meet-03, time, 7 / "7pm")
+(m / meet-03, weekday, M / "Monday")
+(n7 / name, op, "Me")
+(n8 / name, op, "Paul")
+(p8 / person, name, n7 / name)
+(p9 / person, name, n8 / name)
+(t2 / tell-01, ARG0, p8 / person)
+(t2 / tell-01, ARG1, m / meet-03)
+(t2 / tell-01, ARG2, p9 / person)
+
+Oracle:
+(m / meet-03, ARG0, p8 / person)
+(m / meet-03, ARG0, p9 / person)
+(m / meet-03, location, S / "Savor")
+(m / meet-03, time, 7 / "7pm")
+(m / meet-03, weekday, M / "Monday")
+(n7 / name, op, "Me")
+(n8 / name, op, "Paul")
+(p8 / person, name, n7 / name)
+(p9 / person, name, n8 / name)
+(t2 / tell-01, ARG0, p8 / person)
+(t2 / tell-01, ARG1, m / meet-03)
+(t2 / tell-01, ARG2, p9 / person)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Turn on the lights in my bathroom
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Turn => turn-13
+Span 2:  lights => lights
+Span 3:  bathroom => bathroom
+AMR:
+(l / lights, location, b2 / bathroom)
+(t4 / turn-13, ARG1, l / lights)
+
+Oracle:
+(l / lights, location, b2 / bathroom)
+(t4 / turn-13, ARG1, l / lights)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Ask Michele to pick up Liam today
+
+Langrangian relaxation converged after 12 iterations. Delta = 0.0
+Spans:
+Span 1:  Liam => (person :name (name :op "Liam"))
+Span 2:  Michele => (person :name (name :op "Michele"))
+Span 3:  Ask => ask-02
+Span 4:  pick => pick-04
+Span 5:  today => today
+AMR:
+(a / ask-02, ARG1, p6 / pick-04)
+(a / ask-02, ARG2, p5 / person)
+(n5 / name, op, "Michele")
+(n6 / name, op, "Liam")
+(p5 / person, name, n5 / name)
+(p6 / pick-04, ARG0, p5 / person)
+(p6 / pick-04, ARG1, p7 / person)
+(p6 / pick-04, time, t / today)
+(p7 / person, name, n6 / name)
+
+Oracle:
+(a / ask-02, ARG1, p6 / pick-04)
+(a / ask-02, ARG2, p5 / person)
+(n5 / name, op, "Michele")
+(n6 / name, op, "Liam")
+(p5 / person, name, n5 / name)
+(p6 / pick-04, ARG0, p5 / person)
+(p6 / pick-04, ARG1, p7 / person)
+(p6 / pick-04, time, t / today)
+(p7 / person, name, n6 / name)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Set my alarm for 5am tomorrow morning
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Set => set-08
+Span 2:  5am => "5am"
+Span 3:  tomorrow => tomorrow
+Span 4:  alarm => alarm
+AMR:
+(s / set-08, ARG1, a / alarm)
+(t2 / tomorrow, ARG0, 5 / "5am")
+(t2 / tomorrow, location, a / alarm)
+
+Oracle:
+(s / set-08, ARG1, a / alarm)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Ask Michele to get Liam .
+
+Langrangian relaxation converged after 9 iterations. Delta = 0.0
+Spans:
+Span 1:  Liam => (person :name (name :op "Liam"))
+Span 2:  Michele => (person :name (name :op "Michele"))
+Span 3:  Ask => ask-02
+Span 4:  get => get-05
+AMR:
+(a / ask-02, ARG1, g / get-05)
+(a / ask-02, ARG2, p / person)
+(g / get-05, ARG0, p / person)
+(g / get-05, ARG1, p2 / person)
+(n / name, op, "Michele")
+(n2 / name, op, "Liam")
+(p / person, name, n / name)
+(p2 / person, name, n2 / name)
+
+Oracle:
+(a / ask-02, ARG1, g / get-05)
+(a / ask-02, ARG2, p / person)
+(g / get-05, ARG0, p / person)
+(g / get-05, ARG1, p2 / person)
+(n / name, op, "Michele")
+(n2 / name, op, "Liam")
+(p / person, name, n / name)
+(p2 / person, name, n2 / name)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Remind me to buy milk for Liam today
+
+Langrangian relaxation converged after 3 iterations. Delta = 0.0
+Spans:
+Span 1:  Liam => (person :name (name :op "Liam"))
+Span 2:  me => (person :name (name :op "Me"))
+Span 3:  Remind => remind-01
+Span 4:  buy => buy-01
+Span 5:  milk => milk
+AMR:
+(b / buy-01, ARG0, p10 / person)
+(b / buy-01, ARG1, m2 / milk)
+(b / buy-01, ARG4, p11 / person)
+(n10 / name, op, "Me")
+(n11 / name, op, "Liam")
+(p10 / person, name, n10 / name)
+(p11 / person, name, n11 / name)
+(r / remind-01, ARG1, b / buy-01)
+(r / remind-01, ARG2, p10 / person)
+
+Oracle:
+(b / buy-01, ARG0, p10 / person)
+(b / buy-01, ARG1, m2 / milk)
+(b / buy-01, ARG4, p11 / person)
+(n10 / name, op, "Me")
+(n11 / name, op, "Liam")
+(p10 / person, name, n10 / name)
+(p11 / person, name, n11 / name)
+(r / remind-01, ARG1, b / buy-01)
+(r / remind-01, ARG2, p10 / person)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+When are the Giants playing next ?
+
+Langrangian relaxation converged after 3 iterations. Delta = 0.0
+Spans:
+Span 1:  Giants => (team :name (name :op "Giants"))
+Span 2:  playing => play-01
+Span 3:  next => next
+AMR:
+(n16 / name, op, "Giants")
+(p6 / play-01, ARG0, t13 / team)
+(t13 / team, compared-to, n17 / next)
+(t13 / team, name, n16 / name)
+
+Oracle:
+(n16 / name, op, "Giants")
+(p6 / play-01, ARG0, t13 / team)
+(t13 / team, name, n16 / name)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Turn off the lights in Liam 's room
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Liam => (person :name (name :op "Liam"))
+Span 2:  Turn => turn-07
+Span 3:  lights => lights
+AMR:
+(n15 / name, op, "Liam")
+(p12 / person, name, n15 / name)
+(t4 / turn-07, ARG0, p12 / person)
+(t4 / turn-07, ARG1, l2 / lights)
+
+Oracle:
+(n15 / name, op, "Liam")
+(p12 / person, name, n15 / name)
+(t4 / turn-07, ARG1, l2 / lights)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Turn on the TV
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Turn => turn-13
+Span 2:  TV => "TV"
+AMR:
+(t8 / turn-13, ARG1, T / "TV")
+
+Oracle:
+(t8 / turn-13, ARG1, T / "TV")
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Wake me up tomorrow at 5am
+
+Langrangian relaxation converged after 9 iterations. Delta = 0.0
+Spans:
+Span 1:  me => (person :name (name :op "Me"))
+Span 2:  Wake => wake-01
+Span 3:  tomorrow => tomorrow
+Span 4:  5am => "5am"
+AMR:
+(n5 / name, op, "Me")
+(p4 / person, name, n5 / name)
+(w / wake-01, ARG0, p4 / person)
+(w / wake-01, day, t2 / tomorrow)
+(w / wake-01, time, 5 / "5am")
+
+Oracle:
+(n5 / name, op, "Me")
+(p4 / person, name, n5 / name)
+(w / wake-01, ARG0, p4 / person)
+(w / wake-01, day, t2 / tomorrow)
+(w / wake-01, time, 5 / "5am")
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Set the temperature to 68 degrees
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Set => set-02
+Span 2:  temperature => temperature
+Span 3:  68 => 68
+AMR:
+(s / set-02, ARG2, t7 / temperature)
+(t7 / temperature, quant, 6 / 68)
+
+Oracle:
+(s / set-02, ARG2, t7 / temperature)
+(t7 / temperature, quant, 6 / 68)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Set the alarm to away
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Set => set-08
+Span 2:  away => away
+Span 3:  alarm => alarm
+AMR:
+(s / set-08, ARG1, a / alarm)
+(s / set-08, ARG2, a2 / away)
+
+Oracle:
+(s / set-08, ARG1, a / alarm)
+(s / set-08, ARG2, a2 / away)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Turn on the TV in my bedroom
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  TV => (thing :name (name :op "TV"))
+Span 2:  Turn => turn-13
+Span 3:  bedroom => bedroom
+AMR:
+(n8 / name, op, "TV")
+(t10 / thing, location, b / bedroom)
+(t10 / thing, name, n8 / name)
+(t8 / turn-13, ARG1, t10 / thing)
+
+Oracle:
+(n8 / name, op, "TV")
+(t10 / thing, location, b / bedroom)
+(t10 / thing, name, n8 / name)
+(t8 / turn-13, ARG1, t10 / thing)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Record the 49ers game this weekend
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  game => (event :name (name :op "game"))
+Span 2:  49ers => (team :name (name :op "49ers"))
+Span 3:  Record => record-01
+AMR:
+(e / event, name, n11 / name)
+(e / event, poss, t11 / team)
+(n11 / name, op, "game")
+(n12 / name, op, "49ers")
+(r / record-01, ARG1, e / event)
+(t11 / team, name, n12 / name)
+
+Oracle:
+(e / event, name, n11 / name)
+(e / event, poss, t11 / team)
+(n11 / name, op, "game")
+(n12 / name, op, "49ers")
+(r / record-01, ARG1, e / event)
+(t11 / team, name, n12 / name)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Turn off the lights in my bedroom and bathroom
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Turn => turn-07
+Span 2:  lights => lights
+Span 3:  bathroom => bathroom
+Span 4:  bedroom => bedroom
+AMR:
+(l2 / lights, location, b3 / bedroom)
+(l2 / lights, location, b4 / bathroom)
+(t4 / turn-07, ARG1, l2 / lights)
+
+Oracle:
+(l2 / lights, location, b3 / bedroom)
+(l2 / lights, location, b4 / bathroom)
+(t4 / turn-07, ARG1, l2 / lights)
+
+                                   Avg objective value last pass: -10.692094718713474
+Pass 6
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Wake me up tomorrow at 5am
+
+Langrangian relaxation converged after 9 iterations. Delta = 0.0
+Spans:
+Span 1:  me => (person :name (name :op "Me"))
+Span 2:  Wake => wake-01
+Span 3:  tomorrow => tomorrow
+Span 4:  5am => "5am"
+AMR:
+(n5 / name, op, "Me")
+(p4 / person, name, n5 / name)
+(w / wake-01, ARG0, p4 / person)
+(w / wake-01, day, t2 / tomorrow)
+(w / wake-01, time, 5 / "5am")
+
+Oracle:
+(n5 / name, op, "Me")
+(p4 / person, name, n5 / name)
+(w / wake-01, ARG0, p4 / person)
+(w / wake-01, day, t2 / tomorrow)
+(w / wake-01, time, 5 / "5am")
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Ask Michele to get Liam .
+
+Langrangian relaxation converged after 7 iterations. Delta = 0.0
+Spans:
+Span 1:  Liam => (person :name (name :op "Liam"))
+Span 2:  Michele => (person :name (name :op "Michele"))
+Span 3:  Ask => ask-02
+Span 4:  get => get-05
+AMR:
+(a / ask-02, ARG1, g / get-05)
+(a / ask-02, ARG2, p / person)
+(g / get-05, ARG0, p / person)
+(g / get-05, ARG1, p2 / person)
+(n / name, op, "Michele")
+(n2 / name, op, "Liam")
+(p / person, name, n / name)
+(p2 / person, name, n2 / name)
+
+Oracle:
+(a / ask-02, ARG1, g / get-05)
+(a / ask-02, ARG2, p / person)
+(g / get-05, ARG0, p / person)
+(g / get-05, ARG1, p2 / person)
+(n / name, op, "Michele")
+(n2 / name, op, "Liam")
+(p / person, name, n / name)
+(p2 / person, name, n2 / name)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Ask Michele to pick up Liam today
+
+Langrangian relaxation converged after 9 iterations. Delta = 0.0
+Spans:
+Span 1:  Liam => (person :name (name :op "Liam"))
+Span 2:  Michele => (person :name (name :op "Michele"))
+Span 3:  Ask => ask-02
+Span 4:  pick => pick-04
+Span 5:  today => today
+AMR:
+(a / ask-02, ARG1, p6 / pick-04)
+(a / ask-02, ARG2, p5 / person)
+(n5 / name, op, "Michele")
+(n6 / name, op, "Liam")
+(p5 / person, name, n5 / name)
+(p6 / pick-04, ARG0, p5 / person)
+(p6 / pick-04, ARG1, p7 / person)
+(p6 / pick-04, time, t / today)
+(p7 / person, name, n6 / name)
+
+Oracle:
+(a / ask-02, ARG1, p6 / pick-04)
+(a / ask-02, ARG2, p5 / person)
+(n5 / name, op, "Michele")
+(n6 / name, op, "Liam")
+(p5 / person, name, n5 / name)
+(p6 / pick-04, ARG0, p5 / person)
+(p6 / pick-04, ARG1, p7 / person)
+(p6 / pick-04, time, t / today)
+(p7 / person, name, n6 / name)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Turn on the lights in my bathroom
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Turn => turn-13
+Span 2:  lights => lights
+Span 3:  bathroom => bathroom
+AMR:
+(l / lights, location, b2 / bathroom)
+(t4 / turn-13, ARG1, l / lights)
+
+Oracle:
+(l / lights, location, b2 / bathroom)
+(t4 / turn-13, ARG1, l / lights)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Turn on the TV in my bedroom
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  TV => (thing :name (name :op "TV"))
+Span 2:  Turn => turn-13
+Span 3:  bedroom => bedroom
+AMR:
+(n8 / name, op, "TV")
+(t10 / thing, location, b / bedroom)
+(t10 / thing, name, n8 / name)
+(t8 / turn-13, ARG1, t10 / thing)
+
+Oracle:
+(n8 / name, op, "TV")
+(t10 / thing, location, b / bedroom)
+(t10 / thing, name, n8 / name)
+(t8 / turn-13, ARG1, t10 / thing)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Record the 49ers game this weekend
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  game => (event :name (name :op "game"))
+Span 2:  49ers => (team :name (name :op "49ers"))
+Span 3:  Record => record-01
+AMR:
+(e / event, name, n11 / name)
+(e / event, poss, t11 / team)
+(n11 / name, op, "game")
+(n12 / name, op, "49ers")
+(r / record-01, ARG1, e / event)
+(t11 / team, name, n12 / name)
+
+Oracle:
+(e / event, name, n11 / name)
+(e / event, poss, t11 / team)
+(n11 / name, op, "game")
+(n12 / name, op, "49ers")
+(r / record-01, ARG1, e / event)
+(t11 / team, name, n12 / name)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Set the thermometer to 68 degrees
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Set => set-02
+Span 2:  68 => 68
+Span 3:  thermometer => thermometer
+AMR:
+(s / set-02, ARG1, t5 / thermometer)
+(s / set-02, ARG2, 6 / 68)
+
+Oracle:
+(s / set-02, ARG1, t5 / thermometer)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Turn on the TV
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Turn => turn-13
+Span 2:  TV => "TV"
+AMR:
+(t8 / turn-13, ARG1, T / "TV")
+
+Oracle:
+(t8 / turn-13, ARG1, T / "TV")
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Turn off the lights in my bedroom and bathroom
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Turn => turn-07
+Span 2:  lights => lights
+Span 3:  bathroom => bathroom
+Span 4:  bedroom => bedroom
+AMR:
+(l2 / lights, location, b3 / bedroom)
+(l2 / lights, location, b4 / bathroom)
+(t4 / turn-07, ARG1, l2 / lights)
+
+Oracle:
+(l2 / lights, location, b3 / bedroom)
+(l2 / lights, location, b4 / bathroom)
+(t4 / turn-07, ARG1, l2 / lights)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Tell Paul to meet me at Savor at 7pm on Monday
+
+Langrangian relaxation converged after 14 iterations. Delta = 0.0
+Spans:
+Span 1:  me => (person :name (name :op "Me"))
+Span 2:  Paul => (person :name (name :op "Paul"))
+Span 3:  Tell => tell-01
+Span 4:  meet => meet-03
+Span 5:  Savor => "Savor"
+Span 6:  7pm => "7pm"
+Span 7:  Monday => "Monday"
+AMR:
+(m / meet-03, ARG0, p9 / person)
+(m / meet-03, ARG4, p8 / person)
+(m / meet-03, location, S / "Savor")
+(m / meet-03, time, 7 / "7pm")
+(m / meet-03, weekday, M / "Monday")
+(n7 / name, op, "Me")
+(n8 / name, op, "Paul")
+(p8 / person, name, n7 / name)
+(p9 / person, name, n8 / name)
+(t2 / tell-01, ARG0, p8 / person)
+(t2 / tell-01, ARG1, m / meet-03)
+(t2 / tell-01, ARG2, p9 / person)
+
+Oracle:
+(m / meet-03, ARG0, p8 / person)
+(m / meet-03, ARG0, p9 / person)
+(m / meet-03, location, S / "Savor")
+(m / meet-03, time, 7 / "7pm")
+(m / meet-03, weekday, M / "Monday")
+(n7 / name, op, "Me")
+(n8 / name, op, "Paul")
+(p8 / person, name, n7 / name)
+(p9 / person, name, n8 / name)
+(t2 / tell-01, ARG0, p8 / person)
+(t2 / tell-01, ARG1, m / meet-03)
+(t2 / tell-01, ARG2, p9 / person)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Set the temperature to 68 degrees
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Set => set-02
+Span 2:  temperature => temperature
+Span 3:  68 => 68
+AMR:
+(s / set-02, ARG2, t7 / temperature)
+(t7 / temperature, quant, 6 / 68)
+
+Oracle:
+(s / set-02, ARG2, t7 / temperature)
+(t7 / temperature, quant, 6 / 68)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Turn off the lights in Liam 's room
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Liam => (person :name (name :op "Liam"))
+Span 2:  Turn => turn-07
+Span 3:  lights => lights
+AMR:
+(l2 / lights, concession, p12 / person)
+(n15 / name, op, "Liam")
+(p12 / person, name, n15 / name)
+(t4 / turn-07, ARG1, l2 / lights)
+
+Oracle:
+(n15 / name, op, "Liam")
+(p12 / person, name, n15 / name)
+(t4 / turn-07, ARG1, l2 / lights)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Remind me to buy milk for Liam today
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Liam => (person :name (name :op "Liam"))
+Span 2:  me => (person :name (name :op "Me"))
+Span 3:  Remind => remind-01
+Span 4:  buy => buy-01
+Span 5:  milk => milk
+AMR:
+(b / buy-01, ARG0, p10 / person)
+(b / buy-01, ARG1, m2 / milk)
+(b / buy-01, ARG4, p11 / person)
+(n10 / name, op, "Me")
+(n11 / name, op, "Liam")
+(p10 / person, name, n10 / name)
+(p11 / person, name, n11 / name)
+(r / remind-01, ARG1, b / buy-01)
+(r / remind-01, ARG2, p10 / person)
+
+Oracle:
+(b / buy-01, ARG0, p10 / person)
+(b / buy-01, ARG1, m2 / milk)
+(b / buy-01, ARG4, p11 / person)
+(n10 / name, op, "Me")
+(n11 / name, op, "Liam")
+(p10 / person, name, n10 / name)
+(p11 / person, name, n11 / name)
+(r / remind-01, ARG1, b / buy-01)
+(r / remind-01, ARG2, p10 / person)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Set my alarm for 5am tomorrow morning
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Set => set-08
+Span 2:  5am => "5am"
+Span 3:  tomorrow => tomorrow
+Span 4:  alarm => alarm
+AMR:
+(5 / "5am", condition, t2 / tomorrow)
+(s / set-08, ARG1, a / alarm)
+(s / set-08, time, t2 / tomorrow)
+
+Oracle:
+(s / set-08, ARG1, a / alarm)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Set the alarm to away
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Set => set-08
+Span 2:  away => away
+Span 3:  alarm => alarm
+AMR:
+(s / set-08, ARG1, a / alarm)
+(s / set-08, ARG2, a2 / away)
+
+Oracle:
+(s / set-08, ARG1, a / alarm)
+(s / set-08, ARG2, a2 / away)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+When are the Giants playing next ?
+
+Langrangian relaxation converged after 4 iterations. Delta = 0.0
+Spans:
+Span 1:  Giants => (team :name (name :op "Giants"))
+Span 2:  playing => play-01
+Span 3:  next => next
+AMR:
+(n16 / name, op, "Giants")
+(n17 / next, ARG3, p6 / play-01)
+(p6 / play-01, ARG0, t13 / team)
+(t13 / team, name, n16 / name)
+
+Oracle:
+(n16 / name, op, "Giants")
+(p6 / play-01, ARG0, t13 / team)
+(t13 / team, name, n16 / name)
+
+                                   Avg objective value last pass: -12.33322719545907
+Pass 7
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Wake me up tomorrow at 5am
+
+Langrangian relaxation converged after 12 iterations. Delta = 0.0
+Spans:
+Span 1:  me => (person :name (name :op "Me"))
+Span 2:  Wake => wake-01
+Span 3:  tomorrow => tomorrow
+Span 4:  5am => "5am"
+AMR:
+(n5 / name, op, "Me")
+(p4 / person, name, n5 / name)
+(w / wake-01, ARG0, p4 / person)
+(w / wake-01, day, t2 / tomorrow)
+(w / wake-01, time, 5 / "5am")
+
+Oracle:
+(n5 / name, op, "Me")
+(p4 / person, name, n5 / name)
+(w / wake-01, ARG0, p4 / person)
+(w / wake-01, day, t2 / tomorrow)
+(w / wake-01, time, 5 / "5am")
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Turn on the lights in my bathroom
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Turn => turn-13
+Span 2:  lights => lights
+Span 3:  bathroom => bathroom
+AMR:
+(l / lights, location, b2 / bathroom)
+(t4 / turn-13, ARG1, l / lights)
+
+Oracle:
+(l / lights, location, b2 / bathroom)
+(t4 / turn-13, ARG1, l / lights)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Set the alarm to away
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Set => set-08
+Span 2:  away => away
+Span 3:  alarm => alarm
+AMR:
+(s / set-08, ARG1, a / alarm)
+(s / set-08, ARG2, a2 / away)
+
+Oracle:
+(s / set-08, ARG1, a / alarm)
+(s / set-08, ARG2, a2 / away)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+When are the Giants playing next ?
+
+Langrangian relaxation converged after 6 iterations. Delta = 0.0
+Spans:
+Span 1:  Giants => (team :name (name :op "Giants"))
+Span 2:  playing => play-01
+Span 3:  next => next
+AMR:
+(n16 / name, op, "Giants")
+(p6 / play-01, ARG0, t13 / team)
+(p6 / play-01, ARG4, n17 / next)
+(t13 / team, name, n16 / name)
+
+Oracle:
+(n16 / name, op, "Giants")
+(p6 / play-01, ARG0, t13 / team)
+(t13 / team, name, n16 / name)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Set the thermometer to 68 degrees
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Set => set-02
+Span 2:  68 => 68
+Span 3:  thermometer => thermometer
+AMR:
+(6 / 68, consist, t5 / thermometer)
+(s / set-02, ARG1, t5 / thermometer)
+
+Oracle:
+(s / set-02, ARG1, t5 / thermometer)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Record the 49ers game this weekend
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  game => (event :name (name :op "game"))
+Span 2:  49ers => (team :name (name :op "49ers"))
+Span 3:  Record => record-01
+AMR:
+(e / event, name, n11 / name)
+(e / event, poss, t11 / team)
+(n11 / name, op, "game")
+(n12 / name, op, "49ers")
+(r / record-01, ARG1, e / event)
+(t11 / team, name, n12 / name)
+
+Oracle:
+(e / event, name, n11 / name)
+(e / event, poss, t11 / team)
+(n11 / name, op, "game")
+(n12 / name, op, "49ers")
+(r / record-01, ARG1, e / event)
+(t11 / team, name, n12 / name)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Set the temperature to 68 degrees
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Set => set-02
+Span 2:  temperature => temperature
+Span 3:  68 => 68
+AMR:
+(s / set-02, ARG2, t7 / temperature)
+(t7 / temperature, quant, 6 / 68)
+
+Oracle:
+(s / set-02, ARG2, t7 / temperature)
+(t7 / temperature, quant, 6 / 68)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Turn on the TV
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Turn => turn-13
+Span 2:  TV => "TV"
+AMR:
+(t8 / turn-13, ARG1, T / "TV")
+
+Oracle:
+(t8 / turn-13, ARG1, T / "TV")
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Turn off the lights in Liam 's room
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Liam => (person :name (name :op "Liam"))
+Span 2:  Turn => turn-07
+Span 3:  lights => lights
+AMR:
+(n15 / name, op, "Liam")
+(p12 / person, dayperiod, l2 / lights)
+(p12 / person, name, n15 / name)
+(t4 / turn-07, ARG1, l2 / lights)
+
+Oracle:
+(n15 / name, op, "Liam")
+(p12 / person, name, n15 / name)
+(t4 / turn-07, ARG1, l2 / lights)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Ask Michele to get Liam .
+
+Langrangian relaxation converged after 5 iterations. Delta = 0.0
+Spans:
+Span 1:  Liam => (person :name (name :op "Liam"))
+Span 2:  Michele => (person :name (name :op "Michele"))
+Span 3:  Ask => ask-02
+Span 4:  get => get-05
+AMR:
+(a / ask-02, ARG1, g / get-05)
+(a / ask-02, ARG2, p / person)
+(g / get-05, ARG0, p / person)
+(g / get-05, ARG1, p2 / person)
+(n / name, op, "Michele")
+(n2 / name, op, "Liam")
+(p / person, name, n / name)
+(p2 / person, name, n2 / name)
+
+Oracle:
+(a / ask-02, ARG1, g / get-05)
+(a / ask-02, ARG2, p / person)
+(g / get-05, ARG0, p / person)
+(g / get-05, ARG1, p2 / person)
+(n / name, op, "Michele")
+(n2 / name, op, "Liam")
+(p / person, name, n / name)
+(p2 / person, name, n2 / name)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Turn off the lights in my bedroom and bathroom
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Turn => turn-07
+Span 2:  lights => lights
+Span 3:  bathroom => bathroom
+Span 4:  bedroom => bedroom
+AMR:
+(l2 / lights, location, b3 / bedroom)
+(l2 / lights, location, b4 / bathroom)
+(t4 / turn-07, ARG1, l2 / lights)
+
+Oracle:
+(l2 / lights, location, b3 / bedroom)
+(l2 / lights, location, b4 / bathroom)
+(t4 / turn-07, ARG1, l2 / lights)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Set my alarm for 5am tomorrow morning
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Set => set-08
+Span 2:  5am => "5am"
+Span 3:  tomorrow => tomorrow
+Span 4:  alarm => alarm
+AMR:
+(a / alarm, decade, 5 / "5am")
+(a / alarm, decade, t2 / tomorrow)
+(s / set-08, ARG1, a / alarm)
+
+Oracle:
+(s / set-08, ARG1, a / alarm)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Turn on the TV in my bedroom
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  TV => (thing :name (name :op "TV"))
+Span 2:  Turn => turn-13
+Span 3:  bedroom => bedroom
+AMR:
+(n8 / name, op, "TV")
+(t10 / thing, location, b / bedroom)
+(t10 / thing, name, n8 / name)
+(t8 / turn-13, ARG1, t10 / thing)
+
+Oracle:
+(n8 / name, op, "TV")
+(t10 / thing, location, b / bedroom)
+(t10 / thing, name, n8 / name)
+(t8 / turn-13, ARG1, t10 / thing)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Remind me to buy milk for Liam today
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Liam => (person :name (name :op "Liam"))
+Span 2:  me => (person :name (name :op "Me"))
+Span 3:  Remind => remind-01
+Span 4:  buy => buy-01
+Span 5:  milk => milk
+AMR:
+(b / buy-01, ARG0, p10 / person)
+(b / buy-01, ARG1, m2 / milk)
+(b / buy-01, ARG4, p11 / person)
+(n10 / name, op, "Me")
+(n11 / name, op, "Liam")
+(p10 / person, name, n10 / name)
+(p11 / person, name, n11 / name)
+(r / remind-01, ARG1, b / buy-01)
+(r / remind-01, ARG2, p10 / person)
+
+Oracle:
+(b / buy-01, ARG0, p10 / person)
+(b / buy-01, ARG1, m2 / milk)
+(b / buy-01, ARG4, p11 / person)
+(n10 / name, op, "Me")
+(n11 / name, op, "Liam")
+(p10 / person, name, n10 / name)
+(p11 / person, name, n11 / name)
+(r / remind-01, ARG1, b / buy-01)
+(r / remind-01, ARG2, p10 / person)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Tell Paul to meet me at Savor at 7pm on Monday
+
+Langrangian relaxation converged after 17 iterations. Delta = 0.0
+Spans:
+Span 1:  me => (person :name (name :op "Me"))
+Span 2:  Paul => (person :name (name :op "Paul"))
+Span 3:  Tell => tell-01
+Span 4:  meet => meet-03
+Span 5:  Savor => "Savor"
+Span 6:  7pm => "7pm"
+Span 7:  Monday => "Monday"
+AMR:
+(m / meet-03, ARG0, p8 / person)
+(m / meet-03, location, S / "Savor")
+(m / meet-03, time, 7 / "7pm")
+(m / meet-03, weekday, M / "Monday")
+(n7 / name, op, "Me")
+(n8 / name, op, "Paul")
+(p8 / person, name, n7 / name)
+(p9 / person, name, n8 / name)
+(t2 / tell-01, ARG0, p8 / person)
+(t2 / tell-01, ARG1, m / meet-03)
+(t2 / tell-01, ARG2, p9 / person)
+
+Oracle:
+(m / meet-03, ARG0, p8 / person)
+(m / meet-03, ARG0, p9 / person)
+(m / meet-03, location, S / "Savor")
+(m / meet-03, time, 7 / "7pm")
+(m / meet-03, weekday, M / "Monday")
+(n7 / name, op, "Me")
+(n8 / name, op, "Paul")
+(p8 / person, name, n7 / name)
+(p9 / person, name, n8 / name)
+(t2 / tell-01, ARG0, p8 / person)
+(t2 / tell-01, ARG1, m / meet-03)
+(t2 / tell-01, ARG2, p9 / person)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Ask Michele to pick up Liam today
+
+Langrangian relaxation converged after 16 iterations. Delta = 0.0
+Spans:
+Span 1:  Liam => (person :name (name :op "Liam"))
+Span 2:  Michele => (person :name (name :op "Michele"))
+Span 3:  Ask => ask-02
+Span 4:  pick => pick-04
+Span 5:  today => today
+AMR:
+(a / ask-02, ARG1, p6 / pick-04)
+(a / ask-02, ARG2, p5 / person)
+(n5 / name, op, "Michele")
+(n6 / name, op, "Liam")
+(p5 / person, name, n5 / name)
+(p6 / pick-04, ARG0, p5 / person)
+(p6 / pick-04, ARG1, p7 / person)
+(p6 / pick-04, time, t / today)
+(p7 / person, name, n6 / name)
+
+Oracle:
+(a / ask-02, ARG1, p6 / pick-04)
+(a / ask-02, ARG2, p5 / person)
+(n5 / name, op, "Michele")
+(n6 / name, op, "Liam")
+(p5 / person, name, n5 / name)
+(p6 / pick-04, ARG0, p5 / person)
+(p6 / pick-04, ARG1, p7 / person)
+(p6 / pick-04, time, t / today)
+(p7 / person, name, n6 / name)
+
+                                   Avg objective value last pass: -13.534107885525462
+Pass 8
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+When are the Giants playing next ?
+
+Langrangian relaxation converged after 2 iterations. Delta = 0.0
+Spans:
+Span 1:  Giants => (team :name (name :op "Giants"))
+Span 2:  playing => play-01
+Span 3:  next => next
+AMR:
+(n16 / name, op, "Giants")
+(n17 / next, ARG0, t13 / team)
+(p6 / play-01, ARG0, t13 / team)
+(t13 / team, name, n16 / name)
+
+Oracle:
+(n16 / name, op, "Giants")
+(p6 / play-01, ARG0, t13 / team)
+(t13 / team, name, n16 / name)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Wake me up tomorrow at 5am
+
+Langrangian relaxation converged after 12 iterations. Delta = 0.0
+Spans:
+Span 1:  me => (person :name (name :op "Me"))
+Span 2:  Wake => wake-01
+Span 3:  tomorrow => tomorrow
+Span 4:  5am => "5am"
+AMR:
+(n5 / name, op, "Me")
+(p4 / person, name, n5 / name)
+(w / wake-01, ARG0, p4 / person)
+(w / wake-01, day, t2 / tomorrow)
+(w / wake-01, time, 5 / "5am")
+
+Oracle:
+(n5 / name, op, "Me")
+(p4 / person, name, n5 / name)
+(w / wake-01, ARG0, p4 / person)
+(w / wake-01, day, t2 / tomorrow)
+(w / wake-01, time, 5 / "5am")
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Set the temperature to 68 degrees
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Set => set-02
+Span 2:  temperature => temperature
+Span 3:  68 => 68
+AMR:
+(s / set-02, ARG0, t7 / temperature)
+(t7 / temperature, quant, 6 / 68)
+
+Oracle:
+(s / set-02, ARG2, t7 / temperature)
+(t7 / temperature, quant, 6 / 68)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Turn on the TV in my bedroom
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  TV => (thing :name (name :op "TV"))
+Span 2:  Turn => turn-13
+Span 3:  bedroom => bedroom
+AMR:
+(n8 / name, op, "TV")
+(t10 / thing, location, b / bedroom)
+(t10 / thing, name, n8 / name)
+(t8 / turn-13, ARG1, t10 / thing)
+
+Oracle:
+(n8 / name, op, "TV")
+(t10 / thing, location, b / bedroom)
+(t10 / thing, name, n8 / name)
+(t8 / turn-13, ARG1, t10 / thing)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Ask Michele to get Liam .
+
+Langrangian relaxation converged after 11 iterations. Delta = 0.0
+Spans:
+Span 1:  Liam => (person :name (name :op "Liam"))
+Span 2:  Michele => (person :name (name :op "Michele"))
+Span 3:  Ask => ask-02
+Span 4:  get => get-05
+AMR:
+(a / ask-02, ARG1, g / get-05)
+(a / ask-02, ARG2, p / person)
+(g / get-05, ARG0, p / person)
+(g / get-05, ARG1, p2 / person)
+(n / name, op, "Michele")
+(n2 / name, op, "Liam")
+(p / person, name, n / name)
+(p2 / person, name, n2 / name)
+
+Oracle:
+(a / ask-02, ARG1, g / get-05)
+(a / ask-02, ARG2, p / person)
+(g / get-05, ARG0, p / person)
+(g / get-05, ARG1, p2 / person)
+(n / name, op, "Michele")
+(n2 / name, op, "Liam")
+(p / person, name, n / name)
+(p2 / person, name, n2 / name)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Turn on the TV
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Turn => turn-13
+Span 2:  TV => "TV"
+AMR:
+(t8 / turn-13, ARG1, T / "TV")
+
+Oracle:
+(t8 / turn-13, ARG1, T / "TV")
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Set the alarm to away
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Set => set-08
+Span 2:  away => away
+Span 3:  alarm => alarm
+AMR:
+(s / set-08, ARG1, a / alarm)
+(s / set-08, ARG2, a2 / away)
+
+Oracle:
+(s / set-08, ARG1, a / alarm)
+(s / set-08, ARG2, a2 / away)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Set my alarm for 5am tomorrow morning
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Set => set-08
+Span 2:  5am => "5am"
+Span 3:  tomorrow => tomorrow
+Span 4:  alarm => alarm
+AMR:
+(5 / "5am", degree, a / alarm)
+(s / set-08, ARG1, a / alarm)
+(t2 / tomorrow, degree, 5 / "5am")
+
+Oracle:
+(s / set-08, ARG1, a / alarm)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Remind me to buy milk for Liam today
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Liam => (person :name (name :op "Liam"))
+Span 2:  me => (person :name (name :op "Me"))
+Span 3:  Remind => remind-01
+Span 4:  buy => buy-01
+Span 5:  milk => milk
+AMR:
+(b / buy-01, ARG0, p10 / person)
+(b / buy-01, ARG1, m2 / milk)
+(b / buy-01, ARG4, p11 / person)
+(n10 / name, op, "Me")
+(n11 / name, op, "Liam")
+(p10 / person, name, n10 / name)
+(p11 / person, name, n11 / name)
+(r / remind-01, ARG1, b / buy-01)
+(r / remind-01, ARG2, p10 / person)
+
+Oracle:
+(b / buy-01, ARG0, p10 / person)
+(b / buy-01, ARG1, m2 / milk)
+(b / buy-01, ARG4, p11 / person)
+(n10 / name, op, "Me")
+(n11 / name, op, "Liam")
+(p10 / person, name, n10 / name)
+(p11 / person, name, n11 / name)
+(r / remind-01, ARG1, b / buy-01)
+(r / remind-01, ARG2, p10 / person)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Tell Paul to meet me at Savor at 7pm on Monday
+
+Langrangian relaxation converged after 15 iterations. Delta = 0.0
+Spans:
+Span 1:  me => (person :name (name :op "Me"))
+Span 2:  Paul => (person :name (name :op "Paul"))
+Span 3:  Tell => tell-01
+Span 4:  meet => meet-03
+Span 5:  Savor => "Savor"
+Span 6:  7pm => "7pm"
+Span 7:  Monday => "Monday"
+AMR:
+(m / meet-03, ARG0, p9 / person)
+(m / meet-03, location, S / "Savor")
+(m / meet-03, time, 7 / "7pm")
+(m / meet-03, weekday, M / "Monday")
+(n7 / name, op, "Me")
+(n8 / name, op, "Paul")
+(p8 / person, name, n7 / name)
+(p9 / person, name, n8 / name)
+(t2 / tell-01, ARG0, p8 / person)
+(t2 / tell-01, ARG1, m / meet-03)
+(t2 / tell-01, ARG2, p9 / person)
+
+Oracle:
+(m / meet-03, ARG0, p8 / person)
+(m / meet-03, ARG0, p9 / person)
+(m / meet-03, location, S / "Savor")
+(m / meet-03, time, 7 / "7pm")
+(m / meet-03, weekday, M / "Monday")
+(n7 / name, op, "Me")
+(n8 / name, op, "Paul")
+(p8 / person, name, n7 / name)
+(p9 / person, name, n8 / name)
+(t2 / tell-01, ARG0, p8 / person)
+(t2 / tell-01, ARG1, m / meet-03)
+(t2 / tell-01, ARG2, p9 / person)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Turn off the lights in my bedroom and bathroom
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Turn => turn-07
+Span 2:  lights => lights
+Span 3:  bathroom => bathroom
+Span 4:  bedroom => bedroom
+AMR:
+(l2 / lights, location, b3 / bedroom)
+(l2 / lights, location, b4 / bathroom)
+(t4 / turn-07, ARG1, l2 / lights)
+
+Oracle:
+(l2 / lights, location, b3 / bedroom)
+(l2 / lights, location, b4 / bathroom)
+(t4 / turn-07, ARG1, l2 / lights)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Record the 49ers game this weekend
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  game => (event :name (name :op "game"))
+Span 2:  49ers => (team :name (name :op "49ers"))
+Span 3:  Record => record-01
+AMR:
+(e / event, name, n11 / name)
+(e / event, poss, t11 / team)
+(n11 / name, op, "game")
+(n12 / name, op, "49ers")
+(r / record-01, ARG1, e / event)
+(t11 / team, name, n12 / name)
+
+Oracle:
+(e / event, name, n11 / name)
+(e / event, poss, t11 / team)
+(n11 / name, op, "game")
+(n12 / name, op, "49ers")
+(r / record-01, ARG1, e / event)
+(t11 / team, name, n12 / name)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Set the thermometer to 68 degrees
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Set => set-02
+Span 2:  68 => 68
+Span 3:  thermometer => thermometer
+AMR:
+(s / set-02, ARG1, t5 / thermometer)
+(t5 / thermometer, destination, 6 / 68)
+
+Oracle:
+(s / set-02, ARG1, t5 / thermometer)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Ask Michele to pick up Liam today
+
+Langrangian relaxation converged after 14 iterations. Delta = 0.0
+Spans:
+Span 1:  Liam => (person :name (name :op "Liam"))
+Span 2:  Michele => (person :name (name :op "Michele"))
+Span 3:  Ask => ask-02
+Span 4:  pick => pick-04
+Span 5:  today => today
+AMR:
+(a / ask-02, ARG1, p6 / pick-04)
+(a / ask-02, ARG2, p5 / person)
+(n5 / name, op, "Michele")
+(n6 / name, op, "Liam")
+(p5 / person, name, n5 / name)
+(p6 / pick-04, ARG0, p5 / person)
+(p6 / pick-04, ARG1, p7 / person)
+(p6 / pick-04, time, t / today)
+(p7 / person, name, n6 / name)
+
+Oracle:
+(a / ask-02, ARG1, p6 / pick-04)
+(a / ask-02, ARG2, p5 / person)
+(n5 / name, op, "Michele")
+(n6 / name, op, "Liam")
+(p5 / person, name, n5 / name)
+(p6 / pick-04, ARG0, p5 / person)
+(p6 / pick-04, ARG1, p7 / person)
+(p6 / pick-04, time, t / today)
+(p7 / person, name, n6 / name)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Turn off the lights in Liam 's room
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Liam => (person :name (name :op "Liam"))
+Span 2:  Turn => turn-07
+Span 3:  lights => lights
+AMR:
+(n15 / name, op, "Liam")
+(p12 / person, direction, t4 / turn-07)
+(p12 / person, name, n15 / name)
+(t4 / turn-07, ARG1, l2 / lights)
+
+Oracle:
+(n15 / name, op, "Liam")
+(p12 / person, name, n15 / name)
+(t4 / turn-07, ARG1, l2 / lights)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Turn on the lights in my bathroom
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Turn => turn-13
+Span 2:  lights => lights
+Span 3:  bathroom => bathroom
+AMR:
+(l / lights, location, b2 / bathroom)
+(t4 / turn-13, ARG1, l / lights)
+
+Oracle:
+(l / lights, location, b2 / bathroom)
+(t4 / turn-13, ARG1, l / lights)
+
+                                   Avg objective value last pass: -15.059237734775191
+Pass 9
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Record the 49ers game this weekend
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  game => (event :name (name :op "game"))
+Span 2:  49ers => (team :name (name :op "49ers"))
+Span 3:  Record => record-01
+AMR:
+(e / event, name, n11 / name)
+(e / event, poss, t11 / team)
+(n11 / name, op, "game")
+(n12 / name, op, "49ers")
+(r / record-01, ARG1, e / event)
+(t11 / team, name, n12 / name)
+
+Oracle:
+(e / event, name, n11 / name)
+(e / event, poss, t11 / team)
+(n11 / name, op, "game")
+(n12 / name, op, "49ers")
+(r / record-01, ARG1, e / event)
+(t11 / team, name, n12 / name)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Ask Michele to pick up Liam today
+
+Langrangian relaxation converged after 13 iterations. Delta = 0.0
+Spans:
+Span 1:  Liam => (person :name (name :op "Liam"))
+Span 2:  Michele => (person :name (name :op "Michele"))
+Span 3:  Ask => ask-02
+Span 4:  pick => pick-04
+Span 5:  today => today
+AMR:
+(a / ask-02, ARG1, p6 / pick-04)
+(a / ask-02, ARG2, p5 / person)
+(n5 / name, op, "Michele")
+(n6 / name, op, "Liam")
+(p5 / person, name, n5 / name)
+(p6 / pick-04, ARG0, p5 / person)
+(p6 / pick-04, ARG1, p7 / person)
+(p6 / pick-04, time, t / today)
+(p7 / person, name, n6 / name)
+
+Oracle:
+(a / ask-02, ARG1, p6 / pick-04)
+(a / ask-02, ARG2, p5 / person)
+(n5 / name, op, "Michele")
+(n6 / name, op, "Liam")
+(p5 / person, name, n5 / name)
+(p6 / pick-04, ARG0, p5 / person)
+(p6 / pick-04, ARG1, p7 / person)
+(p6 / pick-04, time, t / today)
+(p7 / person, name, n6 / name)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Remind me to buy milk for Liam today
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Liam => (person :name (name :op "Liam"))
+Span 2:  me => (person :name (name :op "Me"))
+Span 3:  Remind => remind-01
+Span 4:  buy => buy-01
+Span 5:  milk => milk
+AMR:
+(b / buy-01, ARG0, p10 / person)
+(b / buy-01, ARG1, m2 / milk)
+(b / buy-01, ARG4, p11 / person)
+(n10 / name, op, "Me")
+(n11 / name, op, "Liam")
+(p10 / person, name, n10 / name)
+(p11 / person, name, n11 / name)
+(r / remind-01, ARG1, b / buy-01)
+(r / remind-01, ARG2, p10 / person)
+
+Oracle:
+(b / buy-01, ARG0, p10 / person)
+(b / buy-01, ARG1, m2 / milk)
+(b / buy-01, ARG4, p11 / person)
+(n10 / name, op, "Me")
+(n11 / name, op, "Liam")
+(p10 / person, name, n10 / name)
+(p11 / person, name, n11 / name)
+(r / remind-01, ARG1, b / buy-01)
+(r / remind-01, ARG2, p10 / person)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Turn on the TV in my bedroom
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  TV => (thing :name (name :op "TV"))
+Span 2:  Turn => turn-13
+Span 3:  bedroom => bedroom
+AMR:
+(n8 / name, op, "TV")
+(t10 / thing, location, b / bedroom)
+(t10 / thing, name, n8 / name)
+(t8 / turn-13, ARG1, t10 / thing)
+
+Oracle:
+(n8 / name, op, "TV")
+(t10 / thing, location, b / bedroom)
+(t10 / thing, name, n8 / name)
+(t8 / turn-13, ARG1, t10 / thing)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Tell Paul to meet me at Savor at 7pm on Monday
+
+Langrangian relaxation converged after 19 iterations. Delta = 0.0
+Spans:
+Span 1:  me => (person :name (name :op "Me"))
+Span 2:  Paul => (person :name (name :op "Paul"))
+Span 3:  Tell => tell-01
+Span 4:  meet => meet-03
+Span 5:  Savor => "Savor"
+Span 6:  7pm => "7pm"
+Span 7:  Monday => "Monday"
+AMR:
+(m / meet-03, ARG0, p8 / person)
+(m / meet-03, ARG1, p9 / person)
+(m / meet-03, location, S / "Savor")
+(m / meet-03, time, 7 / "7pm")
+(m / meet-03, weekday, M / "Monday")
+(n7 / name, op, "Me")
+(n8 / name, op, "Paul")
+(p8 / person, name, n7 / name)
+(p9 / person, name, n8 / name)
+(t2 / tell-01, ARG0, p8 / person)
+(t2 / tell-01, ARG1, m / meet-03)
+(t2 / tell-01, ARG2, p9 / person)
+
+Oracle:
+(m / meet-03, ARG0, p8 / person)
+(m / meet-03, ARG0, p9 / person)
+(m / meet-03, location, S / "Savor")
+(m / meet-03, time, 7 / "7pm")
+(m / meet-03, weekday, M / "Monday")
+(n7 / name, op, "Me")
+(n8 / name, op, "Paul")
+(p8 / person, name, n7 / name)
+(p9 / person, name, n8 / name)
+(t2 / tell-01, ARG0, p8 / person)
+(t2 / tell-01, ARG1, m / meet-03)
+(t2 / tell-01, ARG2, p9 / person)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Set the alarm to away
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Set => set-08
+Span 2:  away => away
+Span 3:  alarm => alarm
+AMR:
+(s / set-08, ARG1, a / alarm)
+(s / set-08, ARG2, a2 / away)
+
+Oracle:
+(s / set-08, ARG1, a / alarm)
+(s / set-08, ARG2, a2 / away)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Set the temperature to 68 degrees
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Set => set-02
+Span 2:  temperature => temperature
+Span 3:  68 => 68
+AMR:
+(s / set-02, ARG2, t7 / temperature)
+(t7 / temperature, quant, 6 / 68)
+
+Oracle:
+(s / set-02, ARG2, t7 / temperature)
+(t7 / temperature, quant, 6 / 68)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Turn on the lights in my bathroom
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Turn => turn-13
+Span 2:  lights => lights
+Span 3:  bathroom => bathroom
+AMR:
+(l / lights, location, b2 / bathroom)
+(t4 / turn-13, ARG1, l / lights)
+
+Oracle:
+(l / lights, location, b2 / bathroom)
+(t4 / turn-13, ARG1, l / lights)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+When are the Giants playing next ?
+
+Langrangian relaxation converged after 3 iterations. Delta = 0.0
+Spans:
+Span 1:  Giants => (team :name (name :op "Giants"))
+Span 2:  playing => play-01
+Span 3:  next => next
+AMR:
+(n16 / name, op, "Giants")
+(p6 / play-01, ARG0, t13 / team)
+(t13 / team, ARG0, n17 / next)
+(t13 / team, name, n16 / name)
+
+Oracle:
+(n16 / name, op, "Giants")
+(p6 / play-01, ARG0, t13 / team)
+(t13 / team, name, n16 / name)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Set my alarm for 5am tomorrow morning
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Set => set-08
+Span 2:  5am => "5am"
+Span 3:  tomorrow => tomorrow
+Span 4:  alarm => alarm
+AMR:
+(5 / "5am", domain, t2 / tomorrow)
+(s / set-08, ARG1, a / alarm)
+(t2 / tomorrow, domain, a / alarm)
+
+Oracle:
+(s / set-08, ARG1, a / alarm)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Turn off the lights in Liam 's room
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Liam => (person :name (name :op "Liam"))
+Span 2:  Turn => turn-07
+Span 3:  lights => lights
+AMR:
+(n15 / name, op, "Liam")
+(p12 / person, name, n15 / name)
+(t4 / turn-07, ARG1, l2 / lights)
+(t4 / turn-07, duration, p12 / person)
+
+Oracle:
+(n15 / name, op, "Liam")
+(p12 / person, name, n15 / name)
+(t4 / turn-07, ARG1, l2 / lights)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Set the thermometer to 68 degrees
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Set => set-02
+Span 2:  68 => 68
+Span 3:  thermometer => thermometer
+AMR:
+(s / set-02, ARG0, 6 / 68)
+(s / set-02, ARG1, t5 / thermometer)
+
+Oracle:
+(s / set-02, ARG1, t5 / thermometer)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Turn off the lights in my bedroom and bathroom
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Turn => turn-07
+Span 2:  lights => lights
+Span 3:  bathroom => bathroom
+Span 4:  bedroom => bedroom
+AMR:
+(l2 / lights, location, b3 / bedroom)
+(l2 / lights, location, b4 / bathroom)
+(t4 / turn-07, ARG1, l2 / lights)
+
+Oracle:
+(l2 / lights, location, b3 / bedroom)
+(l2 / lights, location, b4 / bathroom)
+(t4 / turn-07, ARG1, l2 / lights)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Ask Michele to get Liam .
+
+Langrangian relaxation converged after 13 iterations. Delta = 0.0
+Spans:
+Span 1:  Liam => (person :name (name :op "Liam"))
+Span 2:  Michele => (person :name (name :op "Michele"))
+Span 3:  Ask => ask-02
+Span 4:  get => get-05
+AMR:
+(a / ask-02, ARG1, g / get-05)
+(a / ask-02, ARG2, p / person)
+(g / get-05, ARG0, p / person)
+(g / get-05, ARG1, p2 / person)
+(n / name, op, "Michele")
+(n2 / name, op, "Liam")
+(p / person, name, n / name)
+(p2 / person, name, n2 / name)
+
+Oracle:
+(a / ask-02, ARG1, g / get-05)
+(a / ask-02, ARG2, p / person)
+(g / get-05, ARG0, p / person)
+(g / get-05, ARG1, p2 / person)
+(n / name, op, "Michele")
+(n2 / name, op, "Liam")
+(p / person, name, n / name)
+(p2 / person, name, n2 / name)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Wake me up tomorrow at 5am
+
+Langrangian relaxation converged after 17 iterations. Delta = 0.0
+Spans:
+Span 1:  me => (person :name (name :op "Me"))
+Span 2:  Wake => wake-01
+Span 3:  tomorrow => tomorrow
+Span 4:  5am => "5am"
+AMR:
+(5 / "5am", employed-by, t2 / tomorrow)
+(n5 / name, op, "Me")
+(p4 / person, name, n5 / name)
+(w / wake-01, ARG0, p4 / person)
+(w / wake-01, day, t2 / tomorrow)
+
+Oracle:
+(n5 / name, op, "Me")
+(p4 / person, name, n5 / name)
+(w / wake-01, ARG0, p4 / person)
+(w / wake-01, day, t2 / tomorrow)
+(w / wake-01, time, 5 / "5am")
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Turn on the TV
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Turn => turn-13
+Span 2:  TV => "TV"
+AMR:
+(t8 / turn-13, ARG1, T / "TV")
+
+Oracle:
+(t8 / turn-13, ARG1, T / "TV")
+
+                                   Avg objective value last pass: -16.715862153965023
+Pass 10
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Turn off the lights in my bedroom and bathroom
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Turn => turn-07
+Span 2:  lights => lights
+Span 3:  bathroom => bathroom
+Span 4:  bedroom => bedroom
+AMR:
+(l2 / lights, location, b3 / bedroom)
+(l2 / lights, location, b4 / bathroom)
+(t4 / turn-07, ARG1, l2 / lights)
+
+Oracle:
+(l2 / lights, location, b3 / bedroom)
+(l2 / lights, location, b4 / bathroom)
+(t4 / turn-07, ARG1, l2 / lights)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Set the thermometer to 68 degrees
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Set => set-02
+Span 2:  68 => 68
+Span 3:  thermometer => thermometer
+AMR:
+(6 / 68, example, s / set-02)
+(s / set-02, ARG1, t5 / thermometer)
+
+Oracle:
+(s / set-02, ARG1, t5 / thermometer)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+When are the Giants playing next ?
+
+Langrangian relaxation converged after 6 iterations. Delta = 0.0
+Spans:
+Span 1:  Giants => (team :name (name :op "Giants"))
+Span 2:  playing => play-01
+Span 3:  next => next
+AMR:
+(n16 / name, op, "Giants")
+(p6 / play-01, ARG0, t13 / team)
+(p6 / play-01, time, n17 / next)
+(t13 / team, name, n16 / name)
+
+Oracle:
+(n16 / name, op, "Giants")
+(p6 / play-01, ARG0, t13 / team)
+(t13 / team, name, n16 / name)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Turn off the lights in Liam 's room
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Liam => (person :name (name :op "Liam"))
+Span 2:  Turn => turn-07
+Span 3:  lights => lights
+AMR:
+(l2 / lights, extent, p12 / person)
+(n15 / name, op, "Liam")
+(p12 / person, name, n15 / name)
+(t4 / turn-07, ARG1, l2 / lights)
+
+Oracle:
+(n15 / name, op, "Liam")
+(p12 / person, name, n15 / name)
+(t4 / turn-07, ARG1, l2 / lights)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Ask Michele to pick up Liam today
+
+Langrangian relaxation converged after 14 iterations. Delta = 0.0
+Spans:
+Span 1:  Liam => (person :name (name :op "Liam"))
+Span 2:  Michele => (person :name (name :op "Michele"))
+Span 3:  Ask => ask-02
+Span 4:  pick => pick-04
+Span 5:  today => today
+AMR:
+(a / ask-02, ARG1, p6 / pick-04)
+(a / ask-02, ARG2, p5 / person)
+(n5 / name, op, "Michele")
+(n6 / name, op, "Liam")
+(p5 / person, name, n5 / name)
+(p6 / pick-04, ARG0, p5 / person)
+(p6 / pick-04, ARG1, p7 / person)
+(p6 / pick-04, time, t / today)
+(p7 / person, name, n6 / name)
+
+Oracle:
+(a / ask-02, ARG1, p6 / pick-04)
+(a / ask-02, ARG2, p5 / person)
+(n5 / name, op, "Michele")
+(n6 / name, op, "Liam")
+(p5 / person, name, n5 / name)
+(p6 / pick-04, ARG0, p5 / person)
+(p6 / pick-04, ARG1, p7 / person)
+(p6 / pick-04, time, t / today)
+(p7 / person, name, n6 / name)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Set my alarm for 5am tomorrow morning
+
+Langrangian relaxation converged after 2 iterations. Delta = 0.0
+Spans:
+Span 1:  Set => set-08
+Span 2:  5am => "5am"
+Span 3:  tomorrow => tomorrow
+Span 4:  alarm => alarm
+AMR:
+(a / alarm, frequency, t2 / tomorrow)
+(s / set-08, ARG1, a / alarm)
+(t2 / tomorrow, ARG5, 5 / "5am")
+
+Oracle:
+(s / set-08, ARG1, a / alarm)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Ask Michele to get Liam .
+
+Langrangian relaxation converged after 12 iterations. Delta = 0.0
+Spans:
+Span 1:  Liam => (person :name (name :op "Liam"))
+Span 2:  Michele => (person :name (name :op "Michele"))
+Span 3:  Ask => ask-02
+Span 4:  get => get-05
+AMR:
+(a / ask-02, ARG1, g / get-05)
+(a / ask-02, ARG2, p / person)
+(g / get-05, ARG0, p / person)
+(g / get-05, ARG1, p2 / person)
+(n / name, op, "Michele")
+(n2 / name, op, "Liam")
+(p / person, name, n / name)
+(p2 / person, name, n2 / name)
+
+Oracle:
+(a / ask-02, ARG1, g / get-05)
+(a / ask-02, ARG2, p / person)
+(g / get-05, ARG0, p / person)
+(g / get-05, ARG1, p2 / person)
+(n / name, op, "Michele")
+(n2 / name, op, "Liam")
+(p / person, name, n / name)
+(p2 / person, name, n2 / name)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Turn on the TV in my bedroom
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  TV => (thing :name (name :op "TV"))
+Span 2:  Turn => turn-13
+Span 3:  bedroom => bedroom
+AMR:
+(n8 / name, op, "TV")
+(t10 / thing, location, b / bedroom)
+(t10 / thing, name, n8 / name)
+(t8 / turn-13, ARG1, t10 / thing)
+
+Oracle:
+(n8 / name, op, "TV")
+(t10 / thing, location, b / bedroom)
+(t10 / thing, name, n8 / name)
+(t8 / turn-13, ARG1, t10 / thing)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Set the alarm to away
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Set => set-08
+Span 2:  away => away
+Span 3:  alarm => alarm
+AMR:
+(s / set-08, ARG1, a / alarm)
+(s / set-08, ARG2, a2 / away)
+
+Oracle:
+(s / set-08, ARG1, a / alarm)
+(s / set-08, ARG2, a2 / away)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Tell Paul to meet me at Savor at 7pm on Monday
+
+Langrangian relaxation converged after 22 iterations. Delta = 0.0
+Spans:
+Span 1:  me => (person :name (name :op "Me"))
+Span 2:  Paul => (person :name (name :op "Paul"))
+Span 3:  Tell => tell-01
+Span 4:  meet => meet-03
+Span 5:  Savor => "Savor"
+Span 6:  7pm => "7pm"
+Span 7:  Monday => "Monday"
+AMR:
+(m / meet-03, ARG0, p9 / person)
+(m / meet-03, location, S / "Savor")
+(m / meet-03, quant, p8 / person)
+(m / meet-03, time, 7 / "7pm")
+(m / meet-03, weekday, M / "Monday")
+(n7 / name, op, "Me")
+(n8 / name, op, "Paul")
+(p8 / person, name, n7 / name)
+(p9 / person, name, n8 / name)
+(t2 / tell-01, ARG2, p9 / person)
+
+Oracle:
+(m / meet-03, ARG0, p8 / person)
+(m / meet-03, ARG0, p9 / person)
+(m / meet-03, location, S / "Savor")
+(m / meet-03, time, 7 / "7pm")
+(m / meet-03, weekday, M / "Monday")
+(n7 / name, op, "Me")
+(n8 / name, op, "Paul")
+(p8 / person, name, n7 / name)
+(p9 / person, name, n8 / name)
+(t2 / tell-01, ARG0, p8 / person)
+(t2 / tell-01, ARG1, m / meet-03)
+(t2 / tell-01, ARG2, p9 / person)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Record the 49ers game this weekend
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  game => (event :name (name :op "game"))
+Span 2:  49ers => (team :name (name :op "49ers"))
+Span 3:  Record => record-01
+AMR:
+(e / event, name, n11 / name)
+(n11 / name, op, "game")
+(n12 / name, op, "49ers")
+(r / record-01, ARG1, e / event)
+(t11 / team, ARG1, r / record-01)
+(t11 / team, name, n12 / name)
+
+Oracle:
+(e / event, name, n11 / name)
+(e / event, poss, t11 / team)
+(n11 / name, op, "game")
+(n12 / name, op, "49ers")
+(r / record-01, ARG1, e / event)
+(t11 / team, name, n12 / name)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Set the temperature to 68 degrees
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Set => set-02
+Span 2:  temperature => temperature
+Span 3:  68 => 68
+AMR:
+(s / set-02, ARG2, t7 / temperature)
+(t7 / temperature, quant, 6 / 68)
+
+Oracle:
+(s / set-02, ARG2, t7 / temperature)
+(t7 / temperature, quant, 6 / 68)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Remind me to buy milk for Liam today
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Liam => (person :name (name :op "Liam"))
+Span 2:  me => (person :name (name :op "Me"))
+Span 3:  Remind => remind-01
+Span 4:  buy => buy-01
+Span 5:  milk => milk
+AMR:
+(b / buy-01, ARG0, p10 / person)
+(b / buy-01, ARG1, m2 / milk)
+(b / buy-01, ARG4, p11 / person)
+(n10 / name, op, "Me")
+(n11 / name, op, "Liam")
+(p10 / person, name, n10 / name)
+(p11 / person, name, n11 / name)
+(r / remind-01, ARG1, b / buy-01)
+(r / remind-01, ARG2, p10 / person)
+
+Oracle:
+(b / buy-01, ARG0, p10 / person)
+(b / buy-01, ARG1, m2 / milk)
+(b / buy-01, ARG4, p11 / person)
+(n10 / name, op, "Me")
+(n11 / name, op, "Liam")
+(p10 / person, name, n10 / name)
+(p11 / person, name, n11 / name)
+(r / remind-01, ARG1, b / buy-01)
+(r / remind-01, ARG2, p10 / person)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Turn on the lights in my bathroom
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Turn => turn-13
+Span 2:  lights => lights
+Span 3:  bathroom => bathroom
+AMR:
+(l / lights, location, b2 / bathroom)
+(t4 / turn-13, ARG1, l / lights)
+
+Oracle:
+(l / lights, location, b2 / bathroom)
+(t4 / turn-13, ARG1, l / lights)
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Wake me up tomorrow at 5am
+
+Langrangian relaxation converged after 21 iterations. Delta = 0.0
+Spans:
+Span 1:  me => (person :name (name :op "Me"))
+Span 2:  Wake => wake-01
+Span 3:  tomorrow => tomorrow
+Span 4:  5am => "5am"
+AMR:
+(n5 / name, op, "Me")
+(p4 / person, name, n5 / name)
+(w / wake-01, ARG0, p4 / person)
+(w / wake-01, day, t2 / tomorrow)
+(w / wake-01, time, 5 / "5am")
+
+Oracle:
+(n5 / name, op, "Me")
+(p4 / person, name, n5 / name)
+(w / wake-01, ARG0, p4 / person)
+(w / wake-01, day, t2 / tomorrow)
+(w / wake-01, time, 5 / "5am")
+
+features = List(rootConcept, rootDependencyPathv1, bias, typeBias, self, fragHead, edgeCount, distance, logDistance, posPathv3, dependencyPathv4, conceptBigram)
+connected = true
+Sentence:
+Turn on the TV
+
+Langrangian relaxation converged after 1 iterations. Delta = 0.0
+Spans:
+Span 1:  Turn => turn-13
+Span 2:  TV => "TV"
+AMR:
+(t8 / turn-13, ARG1, T / "TV")
+
+Oracle:
+(t8 / turn-13, ARG1, T / "TV")
+
+                                   Avg objective value last pass: -17.89117284486606
+Writing out weights... done
