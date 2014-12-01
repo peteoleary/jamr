@@ -31,6 +31,7 @@ scala -classpath . edu.cmu.lti.nlp.amr.AMRParser --stage2-decode -w weights -l l
         def isSwitch(s : String) = (s(0) == '-')
         list match {
             case Nil => map
+            case "--model-name"  :: value :: tail =>     parseOptions(map + ('modelName -> value), tail)
             case "--stage1-only" :: l =>                 parseOptions(map + ('stage1Only -> "true"), l)
             case "--stage1-oracle" :: l =>               parseOptions(map + ('stage1Oracle -> "true"), l)
             case "--stage1-train" :: l =>                parseOptions(map + ('stage1Train -> "true"), l)
@@ -83,7 +84,8 @@ scala -classpath . edu.cmu.lti.nlp.amr.AMRParser --stage2-decode -w weights -l l
        result
     }
 
-    var previousStage2: Option[GraphDecoder.Decoder] = None
+    // keep a cache of Decoder objects for each Model
+    var previousStage2: Map[String, GraphDecoder.Decoder] = Map()
     var resultHandler: Option[Graph => Unit] = None
 
     def main(args: Array[String]) {
@@ -92,6 +94,8 @@ scala -classpath . edu.cmu.lti.nlp.amr.AMRParser --stage2-decode -w weights -l l
         val options = parseOptions(Map(),args.toList)
 
         verbosity = options.getOrElse('verbosity, "0").toInt
+
+        val modelName = options('modelName).toString
 
         val outputFormat = options.getOrElse('outputFormat,"triples").split(",").toList
         // Output format is comma separated list of: nodes,edges,AMR,triples
@@ -105,7 +109,7 @@ scala -classpath . edu.cmu.lti.nlp.amr.AMRParser --stage2-decode -w weights -l l
             }
         }
 
-        val stage2 : Option[GraphDecoder.Decoder] = if (previousStage2.isDefined) previousStage2 else {
+        val stage2 : Option[GraphDecoder.Decoder] = if (previousStage2.contains(modelName)) previousStage2.get(modelName) else {
             if((options.contains('stage1Only) || options.contains('stage1Train)) && !options.contains('stage2Train)) {
                 None
             } else {
@@ -113,7 +117,7 @@ scala -classpath . edu.cmu.lti.nlp.amr.AMRParser --stage2-decode -w weights -l l
             }
         }
 
-        previousStage2 = stage2
+        previousStage2 += (modelName -> stage2.get)
 
         val stage2Oracle : Option[GraphDecoder.Decoder] = {
             if(options.contains('trainingData) || options.contains('stage2Train)) {
