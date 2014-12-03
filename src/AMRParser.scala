@@ -117,7 +117,8 @@ scala -classpath . edu.cmu.lti.nlp.amr.AMRParser --stage2-decode -w weights -l l
             }
         }
 
-        previousStage2 += (modelName -> stage2.get)
+        if (stage2.isDefined)
+          previousStage2 += (modelName -> stage2.get)
 
         val stage2Oracle : Option[GraphDecoder.Decoder] = {
             if(options.contains('trainingData) || options.contains('stage2Train)) {

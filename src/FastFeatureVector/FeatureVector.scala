@@ -194,7 +194,10 @@ case class FeatureVector(labelset : Array[String],
         return f
     } */
     def read(iterator: Iterator[String]) {
-      val regex = ( """(.*?)(\+L=(""" + labelset.mkString( "|" ) + """))?[ \t]([^ \t]*)""" ).r // .*? is non-greedy
+      // val oldRegex = ( """(.*?)(\+L=(""" + labelset.mkString( "|" ) + """))?[ \t]([^ \t]*)""" ).r // .*? is non-greedy
+      // don't bother screening out labels in the RegEx, if an unknown label gets through here
+      // an exception will be thrown in labelToIndex
+      val newRegex = ( """(.*?)(\+L=(\:[a-zA-Z0-9-]+))?[ \t]([^ \t]*)""" ).r // .*? is non-greedy
       // (feature, _, label, value)
       // matches featurename+L=label 1.0
       fmap.clear( )
@@ -204,7 +207,7 @@ case class FeatureVector(labelset : Array[String],
           logger( 0, f"FeatureVector read counter=$counter" )
         }
         counter += 1
-        val regex( feature, _, label, value ) = line
+        val newRegex( feature, _, label, value ) = line
         if( !fmap.contains( feature ) ) {
           fmap( feature ) = ValuesMap( 0.0, Map( ) )
         }
