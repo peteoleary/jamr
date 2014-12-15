@@ -9,10 +9,10 @@ import scala.collection.mutable.ArrayBuffer
 /****************************** Align Words *****************************/
 object AlignSpans2 {
 
-    def dumpSpans(marker: String, spans: ArrayBuffer[Span]): String = {
-      var sb = new StringBuilder()
-      for (s <- spans) sb.append(f"$marker: $s\n")
-      sb.toString()
+    val weird_system = if ("abc".split("").toList == List("a","b","c")) {
+        true    // on some systems "abc".split("") gives Array("a","b","c") and I have no idea why
+    } else {
+        false   // usually "abc".split("") is Array("","a","b","c")
     }
 
     def align(sentence: Array[String], graph: Graph) {
@@ -31,8 +31,10 @@ object AlignSpans2 {
                 }
             }
             //words = nodes => { nodes.tail.map(x => Pattern.quote(getConcept(x._2.concept).toLowerCase.replaceAll("[^a-zA-Z0-9\t]",""))).mkString("[^a-zA-Z]*").r }
-            words = nodes => {
-              ("\t"+nodes.tail.map(x => getConcept(x._2.concept).toLowerCase/*.replaceAll("[^a-zA-Z0-9\t]","")*/.split("").tail.map(Pattern.quote(_)).mkString("\t?")).mkString("[^a-zA-Z]*")+"\t").r
+            if (weird_system) {
+                words = nodes => { ("\t"+nodes.tail.map(x => getConcept(x._2.concept).toLowerCase/*.replaceAll("[^a-zA-Z0-9\t]","")*/.split("").map(Pattern.quote(_)).mkString("\t?")).mkString("[^a-zA-Z]*")+"\t").r }
+            } else {
+                words = nodes => { ("\t"+nodes.tail.map(x => getConcept(x._2.concept).toLowerCase/*.replaceAll("[^a-zA-Z0-9\t]","")*/.split("").tail.map(Pattern.quote(_)).mkString("\t?")).mkString("[^a-zA-Z]*")+"\t").r }
             }
         }
 
@@ -50,7 +52,11 @@ object AlignSpans2 {
                 ("\t" + (for ((_, node) <- nodes.tail) yield {
                     var conceptStr = getConcept(node.concept).toLowerCase
                     conceptStr = conceptStr.slice(0, max(fuzzyMatchLength(stemmedSentence, node),4))
-                    conceptStr.split("").tail.map(Pattern.quote(_)).mkString("\t?")
+                    if (weird_system) {
+                        conceptStr.split("").map(Pattern.quote(_)).mkString("\t?")
+                    } else {
+                        conceptStr.split("").tail.map(Pattern.quote(_)).mkString("\t?")
+                    }
                 }).mkString("[^\t]*[^a-zA-Z]*")+"[^\t]*\t").r }
                 //map(x => getConcept(x._2.concept).toLowerCase/*.replaceAll("[^a-zA-Z0-9\t]","")*/.split("").tail.map(Pattern.quote(_)).mkString("\t?")).mkString("[^\t]*[^a-zA-Z]*")+"[^\t]*\t").r }
         }
@@ -181,7 +187,6 @@ object AlignSpans2 {
         addAllSpans(singleConcept, graph, wordToSpan, addCoRefs=false)
         addAllSpans(fuzzyConcept, graph, wordToSpan, addCoRefs=false)
         addAllSpans(US, graph, wordToSpan, addCoRefs=false)
-        val spansBefore = dumpSpans("before", graph.spans)
         updateSpans(namedEntityCollect, graph)
         updateSpans(unalignedEntity, graph)
         updateSpans(quantity, graph)
@@ -190,9 +195,6 @@ object AlignSpans2 {
         updateSpans(governmentOrg, graph)
         updateSpans(polarityChild, graph)
         updateSpans(est, graph)
-        val spansAfter = dumpSpans("after", graph.spans)
-        logger(1, spansBefore)
-        logger(1, spansAfter)
         //try { updateSpans(er, graph) } catch { case e : Throwable => Unit }
         //dateEntities(sentence, graph)
         //namedEntities(sentence, graph)

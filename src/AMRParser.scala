@@ -4,6 +4,8 @@ import java.io.PrintStream
 
 import edu.cmu.lti.nlp.amr.BasicFeatureVector.DecoderResult
 
+import java.io.StringWriter
+import java.io.PrintWriter
 import scala.io.Source.fromFile
 import scala.collection.mutable.Map
 import scala.collection.mutable.Set
@@ -17,7 +19,7 @@ import edu.cmu.lti.nlp.amr.ConceptInvoke.PhraseConceptPair
 /****************************** Driver Program *****************************/
 object AMRParser {
 
-    val VERSION = "JAMR dev v0.2"
+    val VERSION = "JAMR dev v0.3"
 
     val usage = """Usage:
     // TODO: remove --tok so that the parser calls the tokenizer
@@ -46,6 +48,7 @@ scala -classpath . edu.cmu.lti.nlp.amr.AMRParser --stage2-decode -w weights -l l
             case "--stage2-labelset" :: value :: l =>    parseOptions(map + ('stage2Labelset -> value), l)
             case "--stage2-not-connected" :: l =>        parseOptions(map + ('stage2NotConnected -> "true"), l)
             case "--training-loss" :: value :: l =>      parseOptions(map + ('trainingLoss -> value), l)
+            case "--training-initial-weights"::value::l => parseOptions(map + ('trainingInitialWeights -> value), l)
             case "--training-cost-scale" :: value ::l => parseOptions(map + ('trainingCostScale -> value), l)
             case "--training-prec-recall" :: value::l => parseOptions(map + ('trainingPrecRecallTradeoff -> value), l)
             case "--training-l2-strength" :: value::l => parseOptions(map + ('trainingL2RegularizerStrength -> value), l)
@@ -61,6 +64,7 @@ scala -classpath . edu.cmu.lti.nlp.amr.AMRParser --stage2-decode -w weights -l l
             case "--smatch-eval" :: value :: tail =>     parseOptions(map + ('smatchEval -> value), tail)
             case "--output-format" :: value :: l =>      parseOptions(map + ('outputFormat -> value), l)
             case "--ignore-parser-errors" :: l =>        parseOptions(map + ('ignoreParserErrors -> "true"), l)
+            case "--print-stack-trace-on-errors" :: l => parseOptions(map + ('printStackTraceOnErrors -> "true"), l)
             case "--dependencies" :: value :: tail =>    parseOptions(map + ('dependencies -> value), tail)
             case "--ner" :: value :: tail =>             parseOptions(map + ('ner -> value), tail)
             case "--snt" :: value :: tail =>             parseOptions(map ++ Map('notTokenized -> value), tail)
@@ -307,6 +311,9 @@ scala -classpath . edu.cmu.lti.nlp.amr.AMRParser --stage2-decode -w weights -l l
                 if (outputFormat.contains("nodes")) {
                   outStream.println(decoderResultGraph.printNodes.map(x => "# ::node\t" + x).mkString("\n"))
                 }
+                if (outputFormat.contains("root")) {
+                    println(decoderResultGraph.printRoot)
+                }
                 if (outputFormat.contains("edges") && decoderResultGraph.root.relations.size > 0) {
                   outStream.println(decoderResultGraph.printEdges.map(x => "# ::edge\t" + x).mkString("\n"))
                 }
@@ -324,7 +331,15 @@ scala -classpath . edu.cmu.lti.nlp.amr.AMRParser --stage2-decode -w weights -l l
                   outStream.println("# ::tok "+tokenized(i))
                     val sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS")
                   outStream.println("# ::alignments 0-1|0 ::annotator "+VERSION+" ::date "+sdf.format(new Date))
-                  outStream.println("# THERE WAS AN EXCEPTION IN THE PARSER.  Returning an empty graph.  (To find out the error, please run again without --ignore-parser-errors)")
+                  outStream.println("# THERE WAS AN EXCEPTION IN THE PARSER.  Returning an empty graph.")
+                    if (options.contains('printStackTraceOnErrors)) {
+                        val sw = new StringWriter()
+                        e.printStackTrace(new PrintWriter(sw))
+                      outStream.println(sw.toString.split("\n").map(x => "# "+x).mkString("\n"))
+                    }
+                    logger(-1, " ********** THERE WAS AN EXCEPTION IN THE PARSER. *********")
+                    if (verbosity >= -1) { e.printStackTrace }
+                    logger(-1, "Continuing. To exit on errors, please run without --ignore-parser-errors")
                   outStream.println(Graph.empty.prettyString(detail=1, pretty=true) + '\n')
                 } else {
                     throw e

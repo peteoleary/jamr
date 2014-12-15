@@ -69,11 +69,11 @@ object Aligner {
       val sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS")
         for (block <- Corpus.splitOnNewline(input)) {
             if (block.split("\n").exists(_.startsWith("("))) {  // Does it contain some AMR?
-                logger(1,"**** Processsing Block *****")
-                logger(1,block)
-                logger(1,"****************************")
-                val extrastr : String = block.split("\n[(]")(0)
-                val amrstr : String = "(" + block.split("\n[(]").tail.mkString("\n(")
+                logger(2,"**** Processsing Block *****")
+                logger(2,block)
+                logger(2,"****************************")
+                val extrastr : String = block.split("\n").filter(_.matches("^# ::.*")).mkString("\n")
+                val amrstr : String = block.split("\n").filterNot(_.matches("^#.*")).mkString("\n")
                 outStream.println(extrastr)
                 val amr = Graph.parse(amrstr)
                 val extras = AMRTrainingData.getUlfString(extrastr)
@@ -85,7 +85,7 @@ object Aligner {
                 // spanAlignments isn't used, output of .align and .alignSpans is modification of
                 // amr.spans
                 val spanAlignments = if (aligner2) {
-                        AlignSpans2.align(tokenized, amr)
+                        AlignSpans3.align(tokenized, amr)
                     } else {
                         AlignSpans.alignSpans(tokenized, amr, AlignWords.alignWords(tokenized, amr))
                     }
@@ -97,7 +97,12 @@ object Aligner {
                     logger(3, "* "+span.format)
                 }
                 outStream.println("# ::alignments "+spans.map(_.format).mkString(" ")+" ::annotator Aligner v.02 ::date "+sdf.format(new Date))
-                outStream.println(amrstr+"\n")
+                outStream.println(amr.printNodes.map(x => "# ::node\t" + x).mkString("\n"))
+                outStream.println(amr.printRoot)
+                if (amr.root.relations.size > 0) {
+                  outStream.println(amr.printEdges.map(x => "# ::edge\t" + x).mkString("\n"))
+                }
+              outStream.println(amrstr+"\n")
             } else {
                 outStream.println(block+"\n")
             }
